@@ -1,7 +1,11 @@
+# Set environment variables and aliases for now
 source ~/epics-train/settings.sh
+# .. and for eternity
+echo >>~/.bashrc ~/epics-train/settings.sh
 
 # EPICS Base
 wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
+sudo yum install readline-devel
 tar vzxf base-3.15.5.tar.gz
 cd base-3.15.5
 patch -p 1 < ../0001-db-fix-dbGet-of-link-fields-as-DBF_CHAR.patch
