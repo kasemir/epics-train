@@ -14,5 +14,5 @@ xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 1.0
 gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
 
-alias css="~/EPICS/basic-epics-4.2.0/css -share_link ~/Training=/Training >/tmp/css.log 2>&1"
+alias css="~/epics-train/tools/basic-epics-4.2.0/css -pluginCustomization /home/training/epics-train/tools/css.ini -share_link ~/epics-train/examples=/examples >/tmp/css.log 2>&1"
 
