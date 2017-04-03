@@ -3,7 +3,7 @@ Resources for V4 and CSS introduction at EPICS meeting
 
 # Virtual Linux Server Setup
 
-Download VirtualBox-5.1-5.1.18_114002_el6-1.x86_64.rpm 
+Download VirtualBox-5.1-5.1.18_114002_el6-1.x86_64.rpm and also the VirtualBox Extension Pack.
 
 `sudo rpm --install VirtualBox-5.1-5.1.18_114002_el6-1.x86_64.rpm`
 
@@ -31,6 +31,16 @@ Software Selection: "GNOME Desktop" with add-ons
 Network & Host name: Turn ethernet "on", hostname `training.epics`
 
 Users: Set root password to `$root`. Add user `training`, pass `$training` and add group `wheel`
+
+Reboot VM.
+
+In the VirtualBox menu, select `Devices`, `Insert Guest Additions CD Image`.
+Log in as `training` user, then
+```
+sudo /run/media/training/VBOXADDITIONS*/VBoxLinuxAdditions.run
+```
+
+Restart VM once more. The VM's display will now follow the size of the host window.
 
 
 # Training Setup
