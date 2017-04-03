@@ -1,0 +1,9 @@
+# Instead of changing the configure/RELEASE file,
+# this file at a parent directory can be used to
+# customize paths
+
+EPICS_BASEV4=~/epics-train/tools/EPICS-CPP-4.6.0
+PVASRV=$(EPICS_BASEV4)/pvaSrv
+PVACCESS=$(EPICS_BASEV4)/pvAccessCPP
+PVDATA=$(EPICS_BASEV4)/pvDataCPP
+

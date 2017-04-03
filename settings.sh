@@ -5,7 +5,8 @@
 export EPICS_BASE=$HOME/epics-train/tools/base-3.15.5
 export EPICS_BASE4=$HOME/epics-train/tools/EPICS-CPP-4.6.0
 export EPICS_HOST_ARCH=linux-x86_64
-export EPICS_CA_ADDR_LIST=127.0.0.1
+export EPICS_CA_ADDR_LIST="127.0.0.1 10.0.2.15 10.0.2.255"
+export EPICS_PVA_ADDR_LIST="127.0.0.1 10.0.2.15 10.0.2.255"
 export JAVA_HOME=$HOME/epics-train/tools/jdk1.8.0_121
 
 export PATH=$EPICS_BASE4/pvAccessCPP/bin/linux-x86_64:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$PATH
