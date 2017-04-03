@@ -4,12 +4,13 @@
 
 cd "${TOP}"
 
-## Register all support components
 dbLoadDatabase "dbd/PVA.dbd"
 PVA_registerRecordDeviceDriver pdbbase
 
-## Load record instances
 dbLoadRecords "db/pva_records.db", "user=training"
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
+
+# Serve all PVs with PVA in addition to CA
+startPVAServer

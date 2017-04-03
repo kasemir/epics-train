@@ -5,5 +5,9 @@ makeBaseApp.pl -t example CA
 # Pick "CA" when prompted:
 makeBaseApp.pl -i -t example CA
 chmod +x iocBoot/iocCA/st.cmd
+
+# PVA example was manually created based on
+# information in EPICS-CPP-4.6.0/pvaSrv/exampleTop
+
 make
 

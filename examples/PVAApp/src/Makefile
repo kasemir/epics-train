@@ -9,6 +9,10 @@ DBD += PVA.dbd
 
 PVA_DBD += base.dbd
 
+# Add these for pvaSrv support
+PVA_DBD += dbPv.dbd
+PVA_DBD += PVAServerRegister.dbd
+
 PVA_SRCS += PVA_registerRecordDeviceDriver.cpp
 
 
