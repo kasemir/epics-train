@@ -1,0 +1,15 @@
+# EPICS Base
+wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
+tar vzxf base-3.15.5.tar.gz
+cd base-3.15.5
+patch -p 1 < ../0001-db-fix-dbGet-of-link-fields-as-DBF_CHAR.patch
+make
+
+# Java
+# Can't automate. Need to download JDK 8 from
+# http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+# CSS
+wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.2.0-linux.gtk.x86_64.zip
+unzip basic-epics-4.2.0-linux.gtk.x86_64.zip
+
