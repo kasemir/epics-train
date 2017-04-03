@@ -1,8 +1,16 @@
+source ~/epics-train/settings.sh
+
 # EPICS Base
 wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
 tar vzxf base-3.15.5.tar.gz
 cd base-3.15.5
 patch -p 1 < ../0001-db-fix-dbGet-of-link-fields-as-DBF_CHAR.patch
+make
+
+# EPICS V4
+wget https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.g/ Java
+tar vzxf EPICS-CPP-4.6.0.tar.gz
+cd EPICS-CPP-4.6.0
 make
 
 # Java
