@@ -5,3 +5,15 @@ tools/jdk*
 
 
 .project
+
+bin/
+db/
+dbd/
+include/
+lib/
+
+envPaths
+
+O.Common
+O.linux-x86_64
+
