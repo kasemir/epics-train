@@ -1,0 +1,9 @@
+Recipe for setting up examples
+==============================
+
+makeBaseApp.pl -t example CA
+# Pick "CA" when prompted:
+makeBaseApp.pl -i -t example CA
+chmod +x iocBoot/iocCA/st.cmd
+make
+

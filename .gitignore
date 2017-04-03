@@ -1,0 +1,7 @@
+tools/base-*
+tools/basic-epics-*
+tools/EPICS-CPP*
+tools/jdk*
+
+
+.project
