@@ -8,14 +8,12 @@ echo >>~/.bashrc source ~/epics-train/settings.sh
 
 cd ~/epics-train/tools
 
-# Install readline for EPICS base
-sudo yum install readline-devel
-
 # Disable firewall
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
 # EPICS Base
+sudo yum install readline-devel
 wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
 tar vzxf base-3.15.5.tar.gz
 cd base-3.15.5
@@ -28,6 +26,17 @@ cd ..
 wget https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz
 tar vzxf EPICS-CPP-4.6.0.tar.gz
 cd EPICS-CPP-4.6.0
+make
+cd ..
+
+
+# EPICS V4 Python
+sudo yum install numpy
+sudo yum install python-devel
+sudo yum install boost-devel
+sudo yum install boost-python
+cd pvaPy
+make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
 make
 cd ..
 
@@ -49,4 +58,14 @@ tar vzxf ~/Downloads/jdk-8u121-linux-x64.tar.gz
 # CSS
 wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.2.0-linux.gtk.x86_64.zip
 unzip basic-epics-4.2.0-linux.gtk.x86_64.zip
+mv basic-epics-4.2.0 CSS
+# Add PyDev
+REPO=http://ics-web.sns.ornl.gov/css/nightly/repo
+P2="java -Declipse.p2.mirrors=false 
+    -jar CSS/plugins/org.eclipse.equinox.launcher_*.jar 
+    -application org.eclipse.equinox.p2.director "
+# Look for installable modules:
+#  $P2 -repository $REPO -list  |  fgrep pydev.feature.group
+$P2 -installIU org.csstudio.sns.feature.pydev.feature.group -repository $REPO -destination CSS -tag "PyDev"
+
 

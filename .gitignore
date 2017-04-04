@@ -1,5 +1,5 @@
 tools/base-*
-tools/basic-epics-*
+tools/CSS
 tools/EPICS-CPP*
 tools/jdk*
 
@@ -19,3 +19,4 @@ O.linux-x86_64
 
 tools/EPICSV4Sandbox
 
+.pydevproject
