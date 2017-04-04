@@ -68,4 +68,7 @@ P2="java -Declipse.p2.mirrors=false
 #  $P2 -repository $REPO -list  |  fgrep pydev.feature.group
 $P2 -installIU org.csstudio.sns.feature.pydev.feature.group -repository $REPO -destination CSS -tag "PyDev"
 
+# When started for the first time with a new workspace,
+# there can be a PyDev prompt to configure python:
+# Choose automatic config.
 
