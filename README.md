@@ -28,6 +28,10 @@ Software Selection: "GNOME Desktop" with add-ons
  * GNOME Applications
  * Development Tools
 
+Would like to _not_ install these, to be removed later:
+ * LibreOffice
+ * Brasero, Rythmbox, shotwell
+
 Network & Host name: Turn ethernet "on", hostname `training.epics`
 
 Users: Set root password to `$root`. Add user `training`, pass `$training` and add group `wheel`
