@@ -34,6 +34,8 @@ cd ..
 
 # Example V4 image and SNS neutron data similator
 git clone https://github.com/kasemir/EPICSV4Sandbox.git
+# Get the previous version that has byte[], not short[] for image data
+git checkout d4f69b129a7c3d22769ba445abc535ef7b4199b3
 (cd EPICSV4Sandbox/neutronsDemoServer; make)
 (cd EPICSV4Sandbox/ntndarrayServer; make)
 
