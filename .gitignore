@@ -17,3 +17,5 @@ envPaths
 O.Common
 O.linux-x86_64
 
+tools/EPICSV4Sandbox
+

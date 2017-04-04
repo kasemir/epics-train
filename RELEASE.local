@@ -2,8 +2,15 @@
 # this file at a parent directory can be used to
 # customize paths
 
-EPICS_BASEV4=~/epics-train/tools/EPICS-CPP-4.6.0
-PVASRV=$(EPICS_BASEV4)/pvaSrv
-PVACCESS=$(EPICS_BASEV4)/pvAccessCPP
-PVDATA=$(EPICS_BASEV4)/pvDataCPP
+# Do NOT define 'EPICS_BASE' as name in here,
+# but still need to list BASE for some of the apps to build.
+BASE=~/epics-train/tools/base-3.15.5
+BASEV4=~/epics-train/tools/EPICS-CPP-4.6.0
+PVASRV=$(BASEV4)/pvaSrv
+PVACCESS=$(BASEV4)/pvAccessCPP
+PVDATA=$(BASEV4)/pvDataCPP
+PVDATABASE=$(BASEV4)/pvDatabaseCPP
+NORMATIVETYPES=$(BASEV4)/normativeTypesCPP
+PVCOMMON=$(BASEV4)/pvCommonCPP
+
 

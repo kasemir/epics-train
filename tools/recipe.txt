@@ -32,6 +32,12 @@ make
 cd ..
 
 
+# Example V4 image and SNS neutron data similator
+git clone https://github.com/kasemir/EPICSV4Sandbox.git
+(cd EPICSV4Sandbox/neutronsDemoServer; make)
+(cd EPICSV4Sandbox/ntndarrayServer; make)
+
+
 # Java
 # Can't automate. Need to download JDK 8 from
 # http://www.oracle.com/technetwork/java/javase/downloads/index.html
