@@ -8,10 +8,15 @@ echo >>~/.bashrc source ~/epics-train/settings.sh
 
 cd ~/epics-train/tools
 
+# Install readline for EPICS base
+sudo yum install readline-devel
+
+# Disable firewall
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
 
 # EPICS Base
 wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
-sudo yum install readline-devel
 tar vzxf base-3.15.5.tar.gz
 cd base-3.15.5
 patch -p 1 < ../0001-db-fix-dbGet-of-link-fields-as-DBF_CHAR.patch
