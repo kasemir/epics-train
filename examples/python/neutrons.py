@@ -4,8 +4,10 @@ c = pvaccess.Channel('neutrons')
 
 custom = c.get("field()")
 
+print("Custom data structure:")
 print(custom)
 
+# Acts as a python dictionary
 p_charge = custom['proton_charge']['value']
 pixels = custom['pixel']['value']
 
