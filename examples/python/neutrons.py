@@ -1,8 +1,15 @@
-# Read PV EPICSV4Sandbox/neutronsDemoServer
+# Read PV from EPICSV4Sandbox/neutronsDemoServer
 import pvaccess
 c = pvaccess.Channel('neutrons')
 
+# By default, the Channel will request "field(value"),
+# which is not valid for this custom structure and
+# would result in "PvaClientGet::connect invalid pvRequest".
+# Fetch all elements:
 custom = c.get("field()")
+# Could also configure the channel to fetch selected
+# elements of the structure:
+# custom = c.get("field(proton_charge, pixel)")
 
 print("Custom data structure:")
 print(custom)
