@@ -44,6 +44,10 @@ Log in as `training` user, then
 sudo /run/media/training/VBOXADDITIONS*/VBoxLinuxAdditions.run
 ```
 
+Applications, System Tools, Settings:
+Under Users, select Automatic Login for the 'training' user.
+Under Power, set Blank Screen to 'Never' and turn Automatic Suspend off.
+
 Restart VM once more. The VM's display will now follow the size of the host window.
 
 
@@ -53,3 +57,8 @@ Log on as user training, pass $training, then
 ```
 git clone https://github.com/kasemir/epics-train.git
 ```
+
+Invoke Applications, Utilities, Tweak Tool.
+Configure Desktop, Background: Use epics-train/EPICS.png, centered
+Configure Windows, Titlebar, Middle Click: Lower
+
