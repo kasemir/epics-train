@@ -19,9 +19,6 @@ export PATH=$EPICS_BASE4/pvAccessCPP/bin/linux-x86_64:$EPICS_BASE/bin/$EPICS_HOS
 
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1.0
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 1.0
-gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
-gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
 
-
-alias css="~/epics-train/tools/CSS/css -pluginCustomization /home/training/epics-train/tools/css.ini -share_link ~/epics-train/examples=/examples >/tmp/css.log 2>&1 &"
+alias css=~/epics-train/tools/start_css.sh
 
