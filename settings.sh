@@ -21,4 +21,9 @@ xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 1.0
 
 alias css=~/epics-train/tools/start_css.sh
+alias start_iocCA="cd ~/epics-train/examples/iocBoot/iocCA; ./st.cmd"
+alias start_iocPVA="cd ~/epics-train/examples/iocBoot/iocPVA; ./st.cmd"
+alias start_iocfishtank="cd ~/CSS-Workspaces/Default/Display\ Builder/fishtank; sh st.cmd"
+alias start_imagedemo="~/epics-train/tools/EPICSV4Sandbox/ntndarrayServer/bin/linux-x86_64/ntndarrayServerMain IMAGE"
+alias start_neutrondemo="~/epics-train/tools/EPICSV4Sandbox/neutronsDemoServer/bin/linux-x86_64/neutronServerMain"
 
