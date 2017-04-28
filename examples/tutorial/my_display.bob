@@ -117,4 +117,25 @@
     <height>40</height>
     <tooltip>$(actions)</tooltip>
   </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://test1</pv_name>
+        <value>50</value>
+        <description>Test1 = 50</description>
+      </action>
+      <action type="write_pv">
+        <pv_name>loc://test1</pv_name>
+        <value>75</value>
+        <description>Test1 = 75</description>
+      </action>
+    </actions>
+    <text>Set Test1 Value</text>
+    <x>70</x>
+    <y>310</y>
+    <width>150</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
 </display>
