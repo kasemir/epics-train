@@ -78,6 +78,13 @@ $P2 -installIU org.csstudio.sns.feature.pydev.feature.group -repository $REPO -d
 # Exit CSS in 'CS-Studio' perspective
 
 
+# Standalone Display Builder Runtime
+wget https://ics-web.sns.ornl.gov/css/display.builder/display-runtime-0.1-linux.gtk.x86_64.zip
+unzip display-runtime-0.1-linux.gtk.x86_64.zip
+rm display-runtime*zip
+mv display-runtime* display-runtime
+
+
 # C-Python support for CSS
 sudo easy_install py4j
 
@@ -89,3 +96,4 @@ python setup.py install
 sudo python setup.py install
 cd
 rm -rf /tmp/s
+

@@ -1,4 +1,5 @@
 tools/base-*
+tools/display-*
 tools/CSS
 tools/EPICS-CPP*
 tools/jdk*
