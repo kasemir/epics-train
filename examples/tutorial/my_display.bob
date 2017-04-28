@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>My Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Some Value:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>sim://sine</pv_name>
+    <x>100</x>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>Some comment.</text>
+    <x>220</x>
+    <y>50</y>
+    <width>140</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>sim://ramp(1,10,1)</pv_name>
+    <x>150</x>
+    <y>110</y>
+    <width>150</width>
+    <height>30</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Button Group</name>
+    <x>70</x>
+    <y>150</y>
+    <width>230</width>
+    <height>70</height>
+    <style>1</style>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>loc://test</pv_name>
+      <x>24</x>
+      <y>4</y>
+      <width>40</width>
+      <height>40</height>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>loc://test</pv_name>
+      <x>94</x>
+      <y>4</y>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <file>sub_display.bob</file>
+    <macros>
+      <pv>loc://test1</pv>
+    </macros>
+    <x>320</x>
+    <y>80</y>
+    <width>370</width>
+    <height>160</height>
+    <resize>1</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>sub_display.bob</file>
+    <macros>
+      <pv>sim://ramp(1,10,1)</pv>
+    </macros>
+    <x>320</x>
+    <y>260</y>
+    <width>370</width>
+    <height>170</height>
+    <resize>1</resize>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>loc://test1</pv_name>
+        <value>20</value>
+        <description>Test1 = 20</description>
+      </action>
+    </actions>
+    <x>70</x>
+    <y>250</y>
+    <width>150</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

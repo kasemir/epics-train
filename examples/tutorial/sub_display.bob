@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Sub Display</name>
+  <width>500</width>
+  <height>220</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Mini Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider</name>
+    <pv_name>${pv}</pv_name>
+    <x>30</x>
+    <y>50</y>
+    <width>430</width>
+    <height>69</height>
+  </widget>
+  <widget type="linear-meter" version="2.0.0">
+    <name>Linear Meter</name>
+    <pv_name>${pv}</pv_name>
+    <x>30</x>
+    <y>119</y>
+    <width>430</width>
+    <height>81</height>
+    <limits_from_pv>false</limits_from_pv>
+    <unit_from_pv>false</unit_from_pv>
+  </widget>
+</display>
