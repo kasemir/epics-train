@@ -77,3 +77,15 @@ $P2 -installIU org.csstudio.sns.feature.pydev.feature.group -repository $REPO -d
 # 
 # Exit CSS in 'CS-Studio' perspective
 
+
+# C-Python support for CSS
+sudo easy_install py4j
+
+mkdir /tmp/s
+cd /tmp/s
+unzip ~/epics-train/tools/CSS/plugins/org.csstudio.display.builder.runtime_*.jar 
+cd scripts/
+python setup.py install
+sudo python setup.py install
+cd
+rm -rf /tmp/s
