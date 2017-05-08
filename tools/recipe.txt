@@ -97,3 +97,9 @@ sudo python setup.py install
 cd
 rm -rf /tmp/s
 
+
+
+# State before taking snapwhot of VM:
+# CSS left in reset 'CS-Studio' perspective,
+# no files added, no "Display Builder" samples installed,
+# ~/.bash_history cleared
