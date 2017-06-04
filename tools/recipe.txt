@@ -38,7 +38,7 @@ sudo yum install -y boost-python
 cd EPICS-CPP-4.6.0/pvaPy
 make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
 make
-cd ..
+cd ../..
 
 
 # Example V4 image and SNS neutron data similator
@@ -92,11 +92,14 @@ mkdir /tmp/s
 cd /tmp/s
 unzip ~/epics-train/tools/CSS/plugins/org.csstudio.display.builder.runtime_*.jar 
 cd scripts/
-python setup.py install
 sudo python setup.py install
 cd
 rm -rf /tmp/s
 
+
+
+cd ~/epics-train/examples
+make
 
 
 # State before taking snapwhot of VM:
