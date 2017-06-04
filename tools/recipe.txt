@@ -31,11 +31,11 @@ cd ..
 
 
 # EPICS V4 Python
-sudo yum install numpy
-sudo yum install python-devel
-sudo yum install boost-devel
-sudo yum install boost-python
-cd pvaPy
+sudo yum install -y numpy
+sudo yum install -y python-devel
+sudo yum install -y boost-devel
+sudo yum install -y boost-python
+cd EPICS-CPP-4.6.0/pvaPy
 make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
 make
 cd ..
@@ -50,9 +50,9 @@ git checkout d4f69b129a7c3d22769ba445abc535ef7b4199b3
 
 
 # Java
-# Can't automate. Need to download JDK 8 from
+# Can't automate. Need to download JDK 8 (tar.gz, not the rpm) from
 # http://www.oracle.com/technetwork/java/javase/downloads/index.html
-tar vzxf ~/Downloads/jdk-8u121-linux-x64.tar.gz
+tar vzxf ~/Downloads/jdk-8u*-linux-x64.tar.gz
 
 
 # CSS
