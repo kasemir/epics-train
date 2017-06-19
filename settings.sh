@@ -12,7 +12,7 @@ export EPICS_CA_ADDR_LIST="10.0.2.255"
 export EPICS_CA_AUTO_ADDR_LIST=NO
 export EPICS_PVA_ADDR_LIST="10.0.2.15"
 export EPICS_PVA_AUTO_ADDR_LIST=NO
-export JAVA_HOME=$HOME/epics-train/tools/jdk1.8.0_121
+export JAVA_HOME=`echo $HOME/epics-train/tools/jdk1.8.0_*`
 export PYTHONPATH=$EPICS_BASE4/pvaPy/lib/python/2.7/linux-x86_64
 export SWT_GTK3=0
 
