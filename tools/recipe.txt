@@ -22,6 +22,12 @@ make
 cd ..
 
 
+# EtherIP
+git clone https://github.com/EPICSTools/.git
+cd ether_ip
+make
+cd ..
+
 # EPICS V4
 wget https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz
 tar vzxf EPICS-CPP-4.6.0.tar.gz

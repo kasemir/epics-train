@@ -1,0 +1,7 @@
+
+record(ai, "plc_number")
+{
+    field(DTYP, "EtherIP")
+    field(INP, "@plc $(TAG)")
+    field(SCAN, "1 second")
+}

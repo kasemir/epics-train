@@ -2,6 +2,7 @@ tools/base-*
 tools/display-*
 tools/CSS
 tools/EPICS-CPP*
+tools/ether_ip*
 tools/pvaPy-0.7.0
 tools/jdk*
 
