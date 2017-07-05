@@ -6,8 +6,11 @@ tools/ether_ip*
 tools/pvaPy-0.7.0
 tools/jdk*
 tools/VisualDCT
+tools/autosave-R5-7-1
 
 .project
+
+mine/
 
 bin/
 db/

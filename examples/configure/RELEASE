@@ -32,6 +32,10 @@
 # EPICS_BASE should appear last so earlier modules can override stuff:
 EPICS_BASE = /home/training/epics-train/tools/base-3.15.5
 
+ETHER_IP = /home/training/epics-train/tools/ether_ip
+
+AUTOSAVE = /home/training/epics-train/tools/autosave-R5-7-1
+
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
 #RULES = $(MODULES)/build-rules

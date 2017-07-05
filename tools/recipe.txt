@@ -28,6 +28,15 @@ cd ether_ip
 make
 cd ..
 
+# Autosave
+wget https://github.com/epics-modules/autosave/archive/R5-7-1.tar.gz
+tar vzxf R5-7-1.tar.gz 
+rm R5-7-1.tar.gz 
+cp ether_ip/configure/RELEASE  autosave-R5-7-1/configure/
+cd autosave-R5-7-1/
+make
+cd ..
+
 # EPICS V4
 wget https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz
 tar vzxf EPICS-CPP-4.6.0.tar.gz
