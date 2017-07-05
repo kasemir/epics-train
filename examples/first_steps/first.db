@@ -1,0 +1,8 @@
+
+record(calc, "$(S):random")
+{
+  field(SCAN, "1 second")
+  field(INPA, "10")
+  field(CALC, "RNDM*A")
+}
+

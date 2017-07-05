@@ -4,14 +4,16 @@
 #! DBDEND
 
 
-record(calc, ramp) {
+record(calc, "ramp")
+{
   field(CALC, "(A<B)?(A+1):0")
   field(INPA, "ramp")
   field(SCAN, "1 second")
   field(INPB, "limit")
 }
 
-record(ai, limit) {
+record(ai, "limit")
+{
   field(INP, "10")
 }
 
