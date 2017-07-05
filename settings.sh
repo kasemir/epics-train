@@ -28,3 +28,5 @@ alias start_iocPVA="cd ~/epics-train/examples/iocBoot/iocPVA; ./st.cmd"
 alias start_iocfishtank="cd ~/CSS-Workspaces/Default/Display\ Builder/fishtank; sh st.cmd"
 alias start_imagedemo="~/epics-train/tools/EPICSV4Sandbox/ntndarrayServer/bin/linux-x86_64/ntndarrayServerMain IMAGE"
 alias start_neutrondemo="~/epics-train/tools/EPICSV4Sandbox/neutronsDemoServer/bin/linux-x86_64/neutronServerMain"
+alias vdct="java -cp ~/epics-train/tools/VisualDCT/2.6.1274/VisualDCT.jar com.cosylab.vdct.VisualDCT ~/epics-train/tools/eipIoc_3.14.12.6.dbd"
+

@@ -91,6 +91,21 @@ rm display-runtime*zip
 mv display-runtime* display-runtime
 
 
+# VDCT
+# .. has several issues.
+# 1) VDCT can no longer parse the dbd for R3.15,
+#    so the ether_ip/dbd/eipIoc.dbd as built with EPICS base 3.14.12.6
+#    has been included in this repo.
+# 2) Popup dialogs (New Record, Properties) appear blank
+#    until selecting a different window, then VDTC again to force a redraw.
+wget https://www.aps.anl.gov/epics/download/extensions/VisualDCT-dist-2.6.1274.zip
+mkdir VisualDCT
+cd VisualDCT
+unzip ../VisualDCT-dist-2.6.1274.zip 
+cd ..
+rm VisualDCT-dist-2.6.1274.zip 
+
+
 # C-Python support for CSS
 sudo easy_install py4j
 

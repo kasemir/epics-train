@@ -1,0 +1,5 @@
+You can edit the ramp1.db in gedit, or use
+ vdct ramp1.db &
+
+Then, in other terminal,
+ camonitor ramp
