@@ -13,7 +13,9 @@ export EPICS_CA_AUTO_ADDR_LIST=NO
 export EPICS_PVA_ADDR_LIST="10.0.2.15"
 export EPICS_PVA_AUTO_ADDR_LIST=NO
 export JAVA_HOME=`echo $HOME/epics-train/tools/jdk1.8.0_*`
-export PYTHONPATH=$EPICS_BASE4/pvaPy/lib/python/2.7/linux-x86_64
+#export PYTHONPATH=$EPICS_BASE4/pvaPy/lib/python/2.7/linux-x86_64
+export PYTHONPATH=$HOME/epics-train/tools/pvaPy/lib/python/2.7/linux-x86_64
+
 export SWT_GTK3=0
 
 export PATH=$EPICS_BASE4/pvAccessCPP/bin/linux-x86_64:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$HOME/epics-train/tools/ether_ip/bin/linux-x86_64:$PATH

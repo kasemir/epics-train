@@ -50,10 +50,18 @@ sudo yum install -y numpy
 sudo yum install -y python-devel
 sudo yum install -y boost-devel
 sudo yum install -y boost-python
-cd EPICS-CPP-4.6.0/pvaPy
+
+# The pvaPy with EPICS-CPP-4.6.0 lacks the latest pvaServer additions
+#cd EPICS-CPP-4.6.0/pvaPy
+#make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
+#make
+#cd ../..
+
+# Download and compile the lastest 
+git clone https://github.com/epics-base/pvaPy.git
+cd pvaPy
 make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
 make
-cd ../..
 
 
 # Example V4 image and SNS neutron data similator
