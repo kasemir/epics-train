@@ -32,3 +32,5 @@ alias start_imagedemo="~/epics-train/tools/EPICSV4Sandbox/ntndarrayServer/bin/$E
 alias start_neutrondemo="~/epics-train/tools/EPICSV4Sandbox/neutronsDemoServer/bin/$EPICS_HOST_ARCH/neutronServerMain"
 alias vdct="java -cp ~/epics-train/tools/VisualDCT/2.6.1274/VisualDCT.jar com.cosylab.vdct.VisualDCT ~/epics-train/tools/eipIoc_3.14.12.6.dbd"
 
+alias toggle_fishtank="while true; do caput ky9:setpoint 60; sleep 60; caput ky9:setpoint 25; sleep 60; done"
+
