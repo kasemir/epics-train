@@ -18,7 +18,7 @@ export PYTHONPATH=$HOME/epics-train/tools/pvaPy/lib/python/2.7/linux-x86_64
 
 export SWT_GTK3=0
 
-export PATH=$EPICS_BASE4/pvAccessCPP/bin/linux-x86_64:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$HOME/epics-train/tools/ether_ip/bin/linux-x86_64:$PATH
+export PATH=$EPICS_BASE4/pvAccessCPP/bin/$EPICS_HOST_ARCH:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$HOME/epics-train/tools/ether_ip/bin/$EPICS_HOST_ARCH:$PATH
 
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1.0
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 1.0
@@ -28,7 +28,9 @@ alias start_display=~/epics-train/tools/start_display.sh
 alias start_iocCA="cd ~/epics-train/examples/iocBoot/iocCA; ./st.cmd"
 alias start_iocPVA="cd ~/epics-train/examples/iocBoot/iocPVA; ./st.cmd"
 alias start_iocfishtank="cd ~/CSS-Workspaces/Default/Display\ Builder/fishtank; sh st.cmd"
-alias start_imagedemo="~/epics-train/tools/EPICSV4Sandbox/ntndarrayServer/bin/linux-x86_64/ntndarrayServerMain IMAGE"
-alias start_neutrondemo="~/epics-train/tools/EPICSV4Sandbox/neutronsDemoServer/bin/linux-x86_64/neutronServerMain"
+alias start_imagedemo="~/epics-train/tools/EPICSV4Sandbox/ntndarrayServer/bin/$EPICS_HOST_ARCH/ntndarrayServerMain IMAGE"
+alias start_neutrondemo="~/epics-train/tools/EPICSV4Sandbox/neutronsDemoServer/bin/$EPICS_HOST_ARCH/neutronServerMain"
 alias vdct="java -cp ~/epics-train/tools/VisualDCT/2.6.1274/VisualDCT.jar com.cosylab.vdct.VisualDCT ~/epics-train/tools/eipIoc_3.14.12.6.dbd"
+
+alias toggle_fishtank="while true; do caput ky9:setpoint 60; sleep 60; caput ky9:setpoint 25; sleep 60; done"
 
