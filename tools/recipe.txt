@@ -123,6 +123,39 @@ cd ..
 rm VisualDCT-dist-2.6.1274.zip 
 
 
+# EDM
+cd ~/epics-train/tools
+# Prepare EPICS 'extensions' directory
+wget https://epics.anl.gov/download/extensions/extensionsTop_20120904.tar.gz
+tar vzxf extensionsTop_20120904.tar.gz
+.. configure extensions/configure/RELEASE
+
+# Get EDM from https://epics.anl.gov/extensions/index.php,
+# unpack into ~/epics-train/tools/extensions/src
+# Get dependencies
+sudo yum install libXt-devel
+sudo yum install libXmu-devel
+sudo yum install motif-devel
+sudo yum install libXtst-devel
+sudo yum install giflib-devel
+
+cd ~/epics-train/tools/extensions/src/edm
+make
+
+cd setup
+export EDMFILES=/home/training/epics-train/tools/extensions/src/edm/setup
+export EDMOBJECTS=$EDMFILES
+export EDMPVOBJECTS=$EDMFILES
+export PATH=/home/training/epics-train/tools/extensions/bin/linux-x86_64:$PATH
+edm -add /home/training/epics-train/tools/extensions/lib/linux-x86_64/libEdmBase.so 
+edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libEpics.so 
+edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libCalc.so 
+edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libLoc.so 
+
+
+
+
+
 # C-Python support for CSS
 sudo easy_install py4j
 
