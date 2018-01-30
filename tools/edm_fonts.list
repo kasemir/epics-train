@@ -1,0 +1,14 @@
+5 0 0
+courier-bold-r-12.0
+helvetica-bold-r-12.0
+courier={
+-bitstream-courier 10 pitch-(medium,bold)-(r,i)-normal--0-(80=90,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-m-0-*-*	exact
+-adobe-courier-(medium,bold)-(r,o)-normal--0-(80,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-*-0-*-1
+-monotype-arial-(medium,bold)-(r,i)-normal--*-(80,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-p-*-*-*
+}
+helvetica={
+-misc-liberation sans-(medium,bold)-(r,i)-normal--0-(80,100,120,140,160=150,180,200,240,280,320,360,420,480,600,720)-75-75-p-0-*-*	exact
+-urw-nimbus sans l-(medium,bold)-(r,i)-normal--0-(80,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-p-0-*-*	exact
+-adobe-helvetica-(medium,bold)-(r,o)-normal--0-(80,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-p-0-8859-1
+-adobe-helvetica-(medium,bold)-(r,o)-normal--*-(80,100,120,140,160,180,200,240,280,320,360,420,480,600,720)-75-75-p-*-*-*
+}

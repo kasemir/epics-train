@@ -16,9 +16,13 @@ export JAVA_HOME=`echo $HOME/epics-train/tools/jdk1.8.0_*`
 #export PYTHONPATH=$EPICS_BASE4/pvaPy/lib/python/2.7/linux-x86_64
 export PYTHONPATH=$HOME/epics-train/tools/pvaPy/lib/python/2.7/linux-x86_64
 
+export EDMFILES=/home/training/epics-train/tools/extensions/src/edm/setup
+export EDMOBJECTS=$EDMFILES
+export EDMPVOBJECTS=$EDMFILES
+
 export SWT_GTK3=0
 
-export PATH=$EPICS_BASE4/pvAccessCPP/bin/$EPICS_HOST_ARCH:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$HOME/epics-train/tools/ether_ip/bin/$EPICS_HOST_ARCH:$PATH
+export PATH=$HOME/epics-train/tools/extensions/bin/$EPICS_HOST_ARCH:$EPICS_BASE4/pvAccessCPP/bin/$EPICS_HOST_ARCH:$EPICS_BASE/bin/$EPICS_HOST_ARCH:$JAVA_HOME/bin:/home/training/bin:$HOME/epics-train/tools/ether_ip/bin/$EPICS_HOST_ARCH:$PATH
 
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1.0
 xinput set-prop "VirtualBox mouse integration" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 1.0

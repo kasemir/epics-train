@@ -138,6 +138,8 @@ sudo yum install libXmu-devel
 sudo yum install motif-devel
 sudo yum install libXtst-devel
 sudo yum install giflib-devel
+sudo yum install xorg-x11-fonts-75dpi
+sudo yum install xorg-x11-fonts-ISO8859-1-75dpi
 
 cd ~/epics-train/tools/extensions/src/edm
 make
@@ -148,12 +150,13 @@ export EDMOBJECTS=$EDMFILES
 export EDMPVOBJECTS=$EDMFILES
 export PATH=/home/training/epics-train/tools/extensions/bin/linux-x86_64:$PATH
 edm -add /home/training/epics-train/tools/extensions/lib/linux-x86_64/libEdmBase.so 
+edm -add /home/training/epics-train/tools/extensions/lib/linux-x86_64/lib57d79238-2924-420b-ba67-dfbecdf03fcd.so
 edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libEpics.so 
 edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libCalc.so 
 edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libLoc.so 
 
-
-
+cd /home/training/epics-train/tools
+cp edm_fonts.list extensions/src/edm/setup/fonts.list
 
 
 # C-Python support for CSS
