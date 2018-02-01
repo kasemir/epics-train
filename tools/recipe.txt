@@ -79,10 +79,10 @@ tar vzxf ~/Downloads/jdk-8u*-linux-x64.tar.gz
 
 
 # CSS
-wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.2.0-linux.gtk.x86_64.zip
-unzip basic-epics-4.2.0-linux.gtk.x86_64.zip
-mv basic-epics-4.2.0 CSS
-rm basic-epics-4.2.0-linux.gtk.x86_64.zip
+wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.5.0-linux.gtk.x86_64.zip
+unzip basic-epics-4.5.0-linux.gtk.x86_64.zip
+mv basic-epics-4.5.0 CSS
+rm basic-epics-4.5.0-linux.gtk.x86_64.zip
 
 # Add PyDev
 REPO=http://ics-web.sns.ornl.gov/css/nightly/repo
