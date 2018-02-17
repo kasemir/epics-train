@@ -1,0 +1,14 @@
+# Database that has been split:
+#
+# You can execute both parts inside one IOC:
+#   softIoc -m S=$USER -d first_a.db -d first_b.db
+# .. or execute in two separate IOCs:
+#   softIoc -m S=$USER -d first_a.db
+#   softIoc -m S=$USER -d first_b.db
+record(ai, "$(S):range")
+{
+  info(autosaveFields, "VAL")
+  field(INP,  "10")
+  field(PINI, "YES")
+}
+
