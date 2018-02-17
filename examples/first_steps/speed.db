@@ -1,0 +1,30 @@
+# Note "CP":
+# Processes whenever this record changes,
+# then changes itself
+# -> Increments as fast as possible
+record(calc, "ramp")
+{
+  field(CALC, "A+1")
+  field(INPA, "ramp CP")
+}
+
+record(ai, "snapshot")
+{
+  field(INP, "ramp")
+}
+
+record(calc, "rate_raw")
+{
+  field(SCAN, "1 second")
+  field(INPA, "snapshot")
+  field(INPB, "snapshot PP")
+  field(CALC, "B-A")
+  field(FLNK, "rate")
+}
+
+record(ai, "rate")
+{
+  field(INP, "rate_raw")
+  field(SMOO, "0.95")
+}
+
