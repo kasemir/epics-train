@@ -55,7 +55,7 @@ sudo yum install -y boost-python
 # Download and compile the lastest 
 git clone https://github.com/epics-base/pvaPy.git
 cd pvaPy
-make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
+make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE
 make
 
 
