@@ -22,6 +22,8 @@ make clean uninstall
 make
 cd ..
 
+# Set RELEASE.local Paths
+
 # EtherIP
 git clone https://github.com/EPICSTools/ether_ip.git
 cd ether_ip
@@ -34,6 +36,7 @@ tar vzxf R5-7-1.tar.gz
 rm R5-7-1.tar.gz 
 cp ether_ip/configure/RELEASE  autosave-R5-7-1/configure/
 cd autosave-R5-7-1/
+make clean uninstall
 make
 cd ..
 
