@@ -14,16 +14,18 @@ sudo systemctl disable firewalld
 
 # EPICS Base
 sudo yum install readline-devel
-wget https://www.aps.anl.gov/epics/download/base/base-3.15.5.tar.gz
-tar vzxf base-3.15.5.tar.gz
-cd base-3.15.5
-patch -p 1 < ../0001-db-fix-dbGet-of-link-fields-as-DBF_CHAR.patch
+wget https://www.epics.anl.gov/epics/download/base/base-7.0.1.1.tar.gz
+tar vzxf base-7.0.1.1.tar.gz
+rm base-7.0.1.1.tar.gz
+cd base-7.0.1.1
+make clean uninstall
 make
 cd ..
 
+# Set RELEASE.local Paths
 
 # EtherIP
-git clone https://github.com/EPICSTools/.git
+git clone https://github.com/EPICSTools/ether_ip.git
 cd ether_ip
 make
 cd ..
@@ -34,18 +36,11 @@ tar vzxf R5-7-1.tar.gz
 rm R5-7-1.tar.gz 
 cp ether_ip/configure/RELEASE  autosave-R5-7-1/configure/
 cd autosave-R5-7-1/
+make clean uninstall
 make
 cd ..
 
-# EPICS V4
-wget https://sourceforge.net/projects/epics-pvdata/files/4.6.0/EPICS-CPP-4.6.0.tar.gz
-tar vzxf EPICS-CPP-4.6.0.tar.gz
-cd EPICS-CPP-4.6.0
-make
-cd ..
-
-
-# EPICS V4 Python
+# EPICS pvaPY Module
 sudo yum install -y numpy
 sudo yum install -y python-devel
 sudo yum install -y boost-devel
@@ -60,7 +55,7 @@ sudo yum install -y boost-python
 # Download and compile the lastest 
 git clone https://github.com/epics-base/pvaPy.git
 cd pvaPy
-make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
+make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE
 make
 
 
