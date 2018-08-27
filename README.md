@@ -61,6 +61,11 @@ Under Power, set Blank Screen to 'Never' and turn Automatic Suspend off.
 
 Restart VM once more. The VM's display will now follow the size of the host window.
 
+In case 'ssh' access is required from the host:
+Open VirtualBox Devices, Network, Network Settings, Adapter 1 (NAT), Advanced, Port Forwarding.
+Add a new rule from host 127.0.0.1:2200 to guest 10.0.2.15:22.
+Host can now access VM via `ssh -p 2200 training@localhost`.
+
 
 # Training Setup
 
