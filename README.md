@@ -1,15 +1,17 @@
 # epics-train
-Resources for V4 and CSS introduction at EPICS meeting
+Resources for EPICS Introduction.
+Started as V4 and CSS introduction at EPICS meeting,
+then updated for other training sessions.
 
 # Virtual Linux Server Setup
+Download VirtualBox and also the VirtualBox Extension Pack from https://www.virtualbox.org/wiki/Linux_Downloads .
 
-Download VirtualBox-5.1-5.1.18_114002_el6-1.x86_64.rpm and also the VirtualBox Extension Pack.
-
-`sudo rpm --install VirtualBox-5.1-5.1.18_114002_el6-1.x86_64.rpm`
+`sudo rpm --install VirtualBox-5.2-5.2.18_124319_el7-1.x86_64.rpm`
 
 Add yourself to group required to run vbox
 `sudo /usr/sbin/groupadd vboxusers`
-
+`sudo /usr/sbin/usermod -G vboxusers $USER`
+ 
 Start VirtualBox
 
 # Training VM
@@ -19,10 +21,10 @@ Name: Training
 Type: Linux
 Version: RedHat (64-bit)
 Memory Size: 3094 MB
-Disk: VDI, 15GB
+Disk: VDI, dynamically allocated, 20GB
 ```
 
-Start up with `CentOS-7-x86_64-DVD-1611.iso`
+Start up with `CentOS-7-x86_64-DVD-1804.iso`
 
 Software Selection: "GNOME Desktop" with add-ons
  * GNOME Applications
