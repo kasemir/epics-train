@@ -4,8 +4,10 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS BELOW HERE
 
 # Install databases, templates & substitutions like this
+DB += circle.db
 DB += dbExample1.db
 DB += dbExample2.db
+DB += ExampleVersion.db
 DB += dbSubExample.db
 DB += user.substitutions
 

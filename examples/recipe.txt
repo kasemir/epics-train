@@ -1,13 +1,32 @@
 Recipe for setting up examples
 ==============================
 
-makeBaseApp.pl -t example CA
-# Pick "CA" when prompted:
-makeBaseApp.pl -i -t example CA
-chmod +x iocBoot/iocCA/st.cmd
+ExampleApp
+----------
+makeBaseApp.pl -t example Example
+# Pick "Example" when prompted:
+makeBaseApp.pl -i -t example Example
+chmod +x iocBoot/iocExample/st.cmd
 
-# PVA example was manually created based on
-# information in EPICS-CPP-4.6.0/pvaSrv/exampleTop
+# See
+# $EPICS_BASE/modules/pva2pva/README.md:
+# QSrv is already included and automatically started
+
+CombinedApp
+-----------
+# Strips some of the examples, but adds etherip and autosave
+
+# Start with 'src' of the Example
+mkdir CombinedApp
+mkdir CombinedApp/src
+cp ExampleApp/Makefile CombinedApp
+cp ExampleApp/src/Makefile CombinedApp/src/
+cp ExampleApp/src/ExampleMain.cpp CombinedApp/src/CombinedMain.cpp
+
+# Edit makefile: Replace 'Example' with 'Combined',
+# delete all the unused sections of the Makefile,
+# and instead add autosave and etherip
+diff ExampleApp/src/Makefile CombinedApp/src/Makefile
 
 make
 
