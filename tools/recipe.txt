@@ -1,44 +1,54 @@
 Recipe for setting up tools
 ===========================
 
-# Set environment variables and aliases for now
-source ~/epics-train/settings.sh
-# .. and for eternity
-echo >>~/.bashrc source ~/epics-train/settings.sh
+~/epics-train/tools contains all the tools: EPICS base, asyn, CS-Studio, ...
 
-cd ~/epics-train/tools
+~/epics-train/settings.sh sets PATH etc.
+To make this more modular, it's actually sourcing all files in ~/epics-train/tools/profile.d
+
+# Arrange for settings.sh to be sourced:
+echo >>~/.bashrc source ~/epics-train/settings.sh
+#
+# Close terminal, open new terminal to see the effect.
+
 
 # Disable firewall
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
+
 # EPICS Base
-sudo yum install readline-devel
-wget https://www.epics.anl.gov/epics/download/base/base-7.0.1.1.tar.gz
+sudo yum install -y readline-devel
+cd ~/epics-train/tools
+wget https://epics.anl.gov/download/base/base-7.0.1.1.tar.gz
 tar vzxf base-7.0.1.1.tar.gz
 rm base-7.0.1.1.tar.gz
 cd base-7.0.1.1
 make clean uninstall
 make
-cd ..
 
-# Set RELEASE.local Paths
 
 # EtherIP
+cd ~/epics-train/tools
 git clone https://github.com/EPICSTools/ether_ip.git
 cd ether_ip
 make
-cd ..
+echo "ETHER_IP = "`pwd` >> ~/epics-train/RELEASE.local
+
 
 # Autosave
-wget https://github.com/epics-modules/autosave/archive/R5-7-1.tar.gz
-tar vzxf R5-7-1.tar.gz 
-rm R5-7-1.tar.gz 
-cp ether_ip/configure/RELEASE  autosave-R5-7-1/configure/
-cd autosave-R5-7-1/
+cd ~/epics-train/tools
+wget https://github.com/epics-modules/autosave/archive/R5-9.zip
+unzip R5-9.zip
+rm R5-9.zip 
+cp ether_ip/configure/RELEASE autosave-R5-9/configure
+cd autosave-R5-9
 make clean uninstall
 make
-cd ..
+echo "AUTOSAVE = "`pwd` >> ~/epics-train/RELEASE.local
+
+
+# ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 # EPICS pvaPY Module
 sudo yum install -y numpy
