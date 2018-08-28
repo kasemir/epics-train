@@ -61,31 +61,30 @@ tar vzxf jdk-8u*-linux-x64.tar.gz
 tar vzxf jdk-10*linux-x64*.tar.gz
 
 
+# VDCT
+wget https://github.com/epics-extensions/VisualDCT/releases/download/v2.8.0/VisualDCT-2.8.0-distribution.tar.gz
+tar vzxf VisualDCT-2.8.0-distribution.tar.gz 
+rm VisualDCT-2.8.0-distribution.tar.gz 
+
+
 # CSS/Phoebus
 wget https://ics-web.sns.ornl.gov/css/phoebus/phoebus-0.0.1.zip
 unzip phoebus-0.0.1.zip
 
 
-# ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 # EPICS pvaPY Module
+cd ~/epics-train/tools/
 sudo yum install -y numpy
 sudo yum install -y python-devel
 sudo yum install -y boost-devel
 sudo yum install -y boost-python
-
-# The pvaPy with EPICS-CPP-4.6.0 lacks the latest pvaServer additions
-#cd EPICS-CPP-4.6.0/pvaPy
-#make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE4
-#make
-#cd ../..
-
-# Download and compile the lastest 
 git clone https://github.com/epics-base/pvaPy.git
 cd pvaPy
-make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE
+make configure EPICS_BASE=$EPICS_BASE
 make
 
+
+# ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 # CSS
 wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.5.0-linux.gtk.x86_64.zip
@@ -93,43 +92,8 @@ unzip basic-epics-4.5.0-linux.gtk.x86_64.zip
 mv basic-epics-4.5.0 CSS
 rm basic-epics-4.5.0-linux.gtk.x86_64.zip
 
-# Add PyDev
-REPO=http://ics-web.sns.ornl.gov/css/nightly/repo
-P2="java -Declipse.p2.mirrors=false 
-    -jar CSS/plugins/org.eclipse.equinox.launcher_*.jar 
-    -application org.eclipse.equinox.p2.director "
-# Look for installable modules:
-#  $P2 -repository $REPO -list  |  fgrep pydev.feature.group
-$P2 -installIU org.csstudio.sns.feature.pydev.feature.group -repository $REPO -destination CSS -tag "PyDev"
-
-# CSS Workspace:
-# When started for the first time with a new workspace,
-# there can be a PyDev prompt to configure python:
-# Choose automatic config.
-# 
 # Exit CSS in 'CS-Studio' perspective
 
-
-# Standalone Display Builder Runtime
-wget https://ics-web.sns.ornl.gov/css/display.builder/display-runtime-0.1-linux.gtk.x86_64.zip
-unzip display-runtime-0.1-linux.gtk.x86_64.zip
-rm display-runtime*zip
-mv display-runtime* display-runtime
-
-
-# VDCT
-# .. has several issues.
-# 1) VDCT can no longer parse the dbd for R3.15,
-#    so the ether_ip/dbd/eipIoc.dbd as built with EPICS base 3.14.12.6
-#    has been included in this repo.
-# 2) Popup dialogs (New Record, Properties) appear blank
-#    until selecting a different window, then VDTC again to force a redraw.
-wget https://www.aps.anl.gov/epics/download/extensions/VisualDCT-dist-2.6.1274.zip
-mkdir VisualDCT
-cd VisualDCT
-unzip ../VisualDCT-dist-2.6.1274.zip 
-cd ..
-rm VisualDCT-dist-2.6.1274.zip 
 
 
 # EDM

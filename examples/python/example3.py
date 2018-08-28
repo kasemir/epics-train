@@ -1,5 +1,5 @@
-# Read PV from examples/iocBoot/iocCA, using Channel Access
+# Read PV from examples/iocBoot/iocExample, using Channel Access
 import pvaccess
-c = pvaccess.Channel('training:calcExample', pvaccess.CA)
+c = pvaccess.Channel('training:calc1', pvaccess.CA)
 print(c.get())
 

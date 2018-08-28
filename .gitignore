@@ -4,9 +4,9 @@ tools/phoebus-*
 tools/CSS
 tools/EPICS-CPP*
 tools/ether_ip*
-tools/pvaPy-0.7.0
+tools/pvaPy*
 tools/jdk*
-tools/VisualDCT
+tools/VisualDCT*
 tools/autosave*
 
 .project

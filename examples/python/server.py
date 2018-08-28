@@ -1,6 +1,4 @@
 # Example of pvAccess Server in Python
-#
-# Requires updated pvaPy 0.7.0, see updatePvaPy.sh
 
 from time import sleep
 from pvaccess import PvObject, INT, PvaServer
@@ -9,6 +7,9 @@ print("This serves pva://pair")
 print("")
 print("Try")
 print("   pvinfo pair")
+print("   pvget -m -r \"x, y\" pair")
+print("")
+print("or open examples/displays/PVA_Server.bob")
 print("")
 
 pv = PvObject({'x': INT, 'y' : INT})
