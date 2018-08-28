@@ -11,4 +11,4 @@ OPT="-settings /home/training/epics-train/tools/phoebus.ini"
 # To get one instance, use server mode
 #OPT="$OPT -server 4918"
 
-java --add-modules=java.corba -jar $JAR $OPT $SETTINGS "$@" >/tmp/phoebus.log 2>&1 &
+java --add-modules=java.corba -jar $JAR $OPT $SETTINGS "$@" 

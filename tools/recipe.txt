@@ -154,6 +154,8 @@ make
 
 
 # State before taking snapwhot of VM:
+rm -rf ~/.ssh
+rm -rf ~/.phoebus
 # CSS left in reset 'CS-Studio' perspective,
 # no files added, no "Display Builder" samples installed,
 # ~/.bash_history cleared
