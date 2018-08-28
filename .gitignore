@@ -1,3 +1,4 @@
+# Specific Binaries
 tools/base-*
 tools/display-*
 tools/phoebus-*
@@ -8,22 +9,22 @@ tools/pvaPy*
 tools/jdk*
 tools/VisualDCT*
 tools/autosave*
+tools/EPICSV4Sandbox
 
-.project
+# Examples installed from Phoebus/CSS
+examples/Display\ Builder
 
-mine/
-
+# EPICS-created
 bin/
 db/
 dbd/
 include/
 lib/
-
 envPaths
-
 O.Common
 O.linux-x86_64
 
-tools/EPICSV4Sandbox
-
+# Misc files
+.project
 .pydevproject
+mine/

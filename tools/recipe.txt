@@ -71,6 +71,10 @@ rm VisualDCT-2.8.0-distribution.tar.gz
 wget https://ics-web.sns.ornl.gov/css/phoebus/phoebus-0.0.1.zip
 unzip phoebus-0.0.1.zip
 
+rm -rf ~training/epics-train/examples/Display\ Builder
+phoebus
+# Applications, Display, Examples, Install in ~training/epics-train/examples,
+# i.e. creating examples/Display Builder
 
 # EPICS pvaPY Module
 cd ~/epics-train/tools/
