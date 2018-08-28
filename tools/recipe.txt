@@ -53,6 +53,19 @@ git clone https://github.com/kasemir/EPICSV4Sandbox.git
 (cd EPICSV4Sandbox/neutronsDemoServer; make)
 (cd EPICSV4Sandbox/ntndarrayServer; make)
 
+
+# Java
+# Can't automate. Need to download JDK 8 (tar.gz, not the rpm) and 10
+# from http://www.oracle.com/technetwork/java/javase/downloads/index.html
+tar vzxf jdk-8u*-linux-x64.tar.gz
+tar vzxf jdk-10*linux-x64*.tar.gz
+
+
+# CSS/Phoebus
+wget https://ics-web.sns.ornl.gov/css/phoebus/phoebus-0.0.1.zip
+unzip phoebus-0.0.1.zip
+
+
 # ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 # EPICS pvaPY Module
@@ -72,13 +85,6 @@ git clone https://github.com/epics-base/pvaPy.git
 cd pvaPy
 make configure EPICS_BASE=$EPICS_BASE EPICS4_DIR=$EPICS_BASE
 make
-
-
-
-# Java
-# Can't automate. Need to download JDK 8 (tar.gz, not the rpm) from
-# http://www.oracle.com/technetwork/java/javase/downloads/index.html
-tar vzxf ~/Downloads/jdk-8u*-linux-x64.tar.gz
 
 
 # CSS
