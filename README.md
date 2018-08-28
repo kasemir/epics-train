@@ -24,6 +24,8 @@ Memory Size: 3094 MB
 Disk: VDI, dynamically allocated, 20GB
 ```
 
+Update VM settings to use several CPU cores.
+
 Start up with `CentOS-7-x86_64-DVD-1804.iso`:
 When starting VM for the first time, VirtualBox will prompt for an image.
 To boot from ISO image later, open Settings, Storage, Controller: IDE "Empty", press icon to select Centos ISO, then start the VM.
