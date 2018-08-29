@@ -8,7 +8,6 @@ To make this more modular, it's actually sourcing all files in ~/epics-train/too
 
 # Arrange for settings.sh to be sourced:
 echo >>~/.bashrc source ~/epics-train/settings.sh
-#
 # Close terminal, open new terminal to see the effect.
 
 
@@ -36,16 +35,62 @@ make
 echo "ETHER_IP = "`pwd` >> ~/epics-train/RELEASE.local
 
 
+# re2c for Sequencer
+cd ~/epics-train/tools
+wget https://github.com/skvadrik/re2c/releases/download/1.1/re2c-1.1.tar.gz
+tar vzxf re2c-1.1.tar.gz
+rm re2c-1.1.tar.gz
+cd re2c-1.1
+./autogen.sh 
+./configure 
+make
+sudo make install
+
+
+# Sequencer
+cd ~/epics-train/tools
+wget http://www-csr.bessy.de/control/SoftDist/sequencer/releases/seq-2.2.6.tar.gz
+tar vzxf seq-2.2.6.tar.gz 
+rm seq-2.2.6.tar.gz 
+cd seq-2.2.6/
+cp ../ether_ip/configure/RELEASE configure
+make
+echo "SNCSEQ = "`pwd` >> ~/epics-train/RELEASE.local
+
+
 # Autosave
 cd ~/epics-train/tools
 wget https://github.com/epics-modules/autosave/archive/R5-9.zip
 unzip R5-9.zip
 rm R5-9.zip 
-cp ether_ip/configure/RELEASE autosave-R5-9/configure
 cd autosave-R5-9
+cp ../ether_ip/configure/RELEASE configure
 make clean uninstall
 make
 echo "AUTOSAVE = "`pwd` >> ~/epics-train/RELEASE.local
+
+
+# Asyn
+cd ~/epics-train/tools
+wget https://www.aps.anl.gov/epics/download/modules/asyn4-33.tar.gz
+tar vzxf asyn4-33.tar.gz
+rm asyn4-33.tar.gz
+cd asyn4-33
+cp ../ether_ip/configure/RELEASE configure
+make
+echo "ASYN = "`pwd` >> ~/epics-train/RELEASE.local
+
+
+# Stream Device
+cd ~/epics-train/tools
+wget https://github.com/paulscherrerinstitute/StreamDevice/archive/master.zip
+unzip master.zip
+rm master.zip
+cd StreamDevice-master
+cp ../ether_ip/configure/RELEASE configure
+make
+echo "STREAM = "`pwd` >> ~/epics-train/RELEASE.local
+
 
 # Example V4 image and SNS neutron data similator
 cd ~/epics-train/tools
@@ -68,8 +113,11 @@ rm VisualDCT-2.8.0-distribution.tar.gz
 
 
 # CSS/Phoebus
+cd ~/epics-train/tools/
+rm -rf phoebus-0.0.1
 wget https://ics-web.sns.ornl.gov/css/phoebus/phoebus-0.0.1.zip
 unzip phoebus-0.0.1.zip
+rm phoebus-0.0.1.zip 
 
 rm -rf ~training/epics-train/examples/Display\ Builder
 phoebus

@@ -10,6 +10,10 @@ tools/jdk*
 tools/VisualDCT*
 tools/autosave*
 tools/EPICSV4Sandbox
+tools/StreamDevice*
+tools/asyn*
+tools/re2c*
+tools/seq*
 
 # Examples installed from Phoebus/CSS
 examples/Display\ Builder
@@ -28,3 +32,5 @@ O.linux-x86_64
 .project
 .pydevproject
 mine/
+
+
