@@ -107,9 +107,10 @@ tar vzxf jdk-10*linux-x64*.tar.gz
 
 
 # VDCT
-wget https://github.com/epics-extensions/VisualDCT/releases/download/v2.8.0/VisualDCT-2.8.0-distribution.tar.gz
-tar vzxf VisualDCT-2.8.0-distribution.tar.gz 
-rm VisualDCT-2.8.0-distribution.tar.gz 
+cd ~/epics-train/tools/
+wget https://github.com/epics-extensions/VisualDCT/releases/download/v2.8.1/VisualDCT-2.8.1-distribution.tar.gz
+tar vzxf VisualDCT-2.8.1-distribution.tar.gz 
+rm VisualDCT-2.8.1-distribution.tar.gz 
 
 
 # CSS/Phoebus
