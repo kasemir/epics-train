@@ -116,7 +116,7 @@ rm VisualDCT-2.8.1-distribution.tar.gz
 # CSS/Phoebus
 cd ~/epics-train/tools/
 rm -rf phoebus-0.0.1
-wget https://ics-web.sns.ornl.gov/css/phoebus/phoebus-0.0.1.zip
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/phoebus-0.0.1.zip
 unzip phoebus-0.0.1.zip
 rm phoebus-0.0.1.zip 
 
