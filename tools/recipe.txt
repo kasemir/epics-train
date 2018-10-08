@@ -102,9 +102,10 @@ git clone https://github.com/kasemir/EPICSV4Sandbox.git
 # Java
 # Can't automate. Need to download JDK 8 (tar.gz, not the rpm) and 10
 # from http://www.oracle.com/technetwork/java/javase/downloads/index.html
+# and JDK11 from http://jdk.java.net/11/
 tar vzxf jdk-8u*-linux-x64.tar.gz
 tar vzxf jdk-10*linux-x64*.tar.gz
-
+tar vzxf openjdk-11_linux-x64_bin.tar.gz
 
 # VDCT
 cd ~/epics-train/tools/
