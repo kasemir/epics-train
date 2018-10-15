@@ -16,7 +16,7 @@ drvEtherIP_init()
 #dbLoadRecords "plc/plc1.db","TAG=Limits6[1]"
 
 # Stream Device Example
-#epicsEnvSet("STREAM_PROTOCOL_PATH", ".")
+#epicsEnvSet("STREAM_PROTOCOL_PATH", "../../CombinedApp/Db")
 #drvAsynIPPortConfigure("SI", "127.0.0.1:24742")
 #dbLoadRecords("db/si_stream.db")
 
