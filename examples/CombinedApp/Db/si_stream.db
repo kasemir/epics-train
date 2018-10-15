@@ -1,0 +1,14 @@
+# Database for simpleInstrument.py
+
+record(ao, "SI:Volt")
+{
+  field(DTYP, "stream")
+  field(OUT,  "@si.proto setVolt SI")
+}
+
+record(ai, "SI:Amp")
+{
+  field(DTYP, "stream")
+  field(INP,  "@si.proto getCurr SI")
+  field(SCAN, "5 second")
+}

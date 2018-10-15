@@ -1,0 +1,28 @@
+# Stream Protocol file for simpleInstrument.py
+
+Terminator = CR LF;
+InTerminator = CR LF;
+ReplyTimeout = 10000;
+ReadTimeout = 10000;
+
+
+getVolt
+{
+  out "VOLTS?";
+  in "%f";
+}
+
+setVolt
+{
+  out "VOLTS %f";
+  @init
+  {
+    getVolt;
+  }
+}
+
+getCurr
+{
+  out "CURR?";
+  in "%f";
+}

@@ -30,6 +30,12 @@ Combined_DBD += ether_ip.dbd
 # Add these for autosave
 Combined_DBD += asSupport.dbd
 
+# Add these for stream device (and asyn)
+Combined_DBD += stream.dbd
+Combined_DBD += asyn.dbd
+Combined_DBD += drvAsynIPPort.dbd
+
+
 # Combined_registerRecordDeviceDriver.cpp derives from Combined.dbd
 Combined_SRCS += Combined_registerRecordDeviceDriver.cpp
 
@@ -42,9 +48,13 @@ Combined_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
 
 # ether_ip
 Combined_LIBS += ether_ip
-#
+
 # autosave
 Combined_LIBS += autosave
+
+# stream
+Combined_LIBS += asyn
+Combined_LIBS += stream
 
 # Finally link IOC to the EPICS Base libraries
 Combined_LIBS += $(EPICS_BASE_IOC_LIBS)
