@@ -1,0 +1,58 @@
+# Demo of 'busy' record
+#
+# Basic idea:
+# When writing a "1" to the busy record,
+# it remains in the active/busy/processing state
+# until something writes a "0" to it.
+#
+# This example simulates a slow device
+# with a "DemoDevice" setpoint
+# and a "DemoDeviceReadback" readback
+# that slowly follows the setpoint.
+#
+# Writing to the setpoints sets the busy record.
+# Since the DemoDevice has an FLNK & OUT chain
+# to the busy record, performing a "put callback"
+# via channel access will thus hang while
+# the busy record is active.
+record(ai, "DemoDevice")
+{
+    field(DESC, "Setpoint")
+    field(FLNK, "DemoDeviceStart")
+}
+
+record(ao, "DemoDeviceStart")
+{
+    field(DOL, "1")
+    field(OUT, "DemoDeviceBusy PP")
+}
+
+record(busy, "DemoDeviceBusy")
+{
+    field(FLNK, "DemoDeviceReadback")
+}
+
+# Readback slowly follows the setpoint
+record(calc, "DemoDeviceReadback")
+{
+    field(DESC, "Readback")
+    field(INPA, "DemoDeviceReadback")
+    field(INPB, "DemoDevice")
+    field(CALC, "(A>B)?(A-0.1):((A<B)?(A+0.1):B)")
+    field(SCAN, ".1 second")
+    field(PREC, "2")
+    field(FLNK, "DemoDeviceDone")
+}
+
+# When readback matches the setpoint,
+# busy record is cleared and a pending
+# "put callback" will complete
+record(calcout, "DemoDeviceDone")
+{
+    field(INPA, "DemoDeviceReadback")
+    field(INPB, "DemoDevice")
+    field(CALC, "ABS(A-B)>0.2")
+    field(OOPT, "Transition To Zero")
+    field(OUT,  "DemoDeviceBusy PP")
+}
+

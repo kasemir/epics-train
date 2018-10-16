@@ -35,6 +35,9 @@ Combined_DBD += stream.dbd
 Combined_DBD += asyn.dbd
 Combined_DBD += drvAsynIPPort.dbd
 
+# Add these for the busy record (also needs asyn)
+Combined_DBD += busySupport.dbd
+
 
 # Combined_registerRecordDeviceDriver.cpp derives from Combined.dbd
 Combined_SRCS += Combined_registerRecordDeviceDriver.cpp
@@ -55,6 +58,9 @@ Combined_LIBS += autosave
 # stream
 Combined_LIBS += asyn
 Combined_LIBS += stream
+
+# busy
+Combined_LIBS += busy
 
 # Finally link IOC to the EPICS Base libraries
 Combined_LIBS += $(EPICS_BASE_IOC_LIBS)

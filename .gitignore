@@ -14,6 +14,7 @@ tools/StreamDevice*
 tools/asyn*
 tools/re2c*
 tools/seq*
+tools/busy*
 
 # Examples installed from Phoebus/CSS
 examples/Display\ Builder

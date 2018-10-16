@@ -92,6 +92,17 @@ make
 echo "STREAM = "`pwd` >> ~/epics-train/RELEASE.local
 
 
+# Busy record
+cd ~/epics-train/tools
+wget https://epics.anl.gov/bcda/synApps/tar/busy_R1-6-1.tar.gz
+tar vzxf busy_R1-6-1.tar.gz
+rm busy_R1-6-1.tar.gz
+cd busy-1-6-1
+cp ../ether_ip/configure/RELEASE configure
+make
+echo "BUSY = "`pwd` >> ~/epics-train/RELEASE.local
+
+
 # Example V4 image and SNS neutron data similator
 cd ~/epics-train/tools
 git clone https://github.com/kasemir/EPICSV4Sandbox.git

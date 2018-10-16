@@ -20,6 +20,8 @@ drvEtherIP_init()
 #drvAsynIPPortConfigure("SI", "127.0.0.1:24742")
 #dbLoadRecords("db/si_stream.db")
 
+# Busy record demo
+dbLoadRecords("db/busy_demo.db")
 
 # Configure autosave
 epicsEnvSet SAVE_DIR /tmp
