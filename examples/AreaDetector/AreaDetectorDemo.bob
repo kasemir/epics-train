@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <P>13SIM1:</P>
+    <R>cam1:</R>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Area Detector Demo</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>simDetectorSetup.opi</file>
+        <target>replace</target>
+        <description>Setup</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>31</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <file>simDetector.opi</file>
+        <target>replace</target>
+        <description>Detector</description>
+      </action>
+    </actions>
+    <x>120</x>
+    <y>31</y>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>1) cd /home/training/epics-train/examples/AreaDetector
+   ./start_sim_ioc.sh
+
+2) Open Detector page
+3) Press Connect.. "Start"
+4) Open Plugins.. "All" and "Enable" the NDPluginStdArrays
+</text>
+    <x>10</x>
+    <y>80</y>
+    <width>400</width>
+    <height>180</height>
+  </widget>
+  <widget type="image" version="2.0.0">
+    <name>Image</name>
+    <pv_name>$(P)image1:ArrayData</pv_name>
+    <x>10</x>
+    <y>190</y>
+    <width>720</width>
+    <height>410</height>
+    <data_width>1024</data_width>
+    <data_height>1024</data_height>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TextUpdate</name>
+    <pv_name>$(P)$(R)ArrayCounter_RBV</pv_name>
+    <x>80</x>
+    <y>610</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>TextUpdate_1</name>
+    <pv_name>$(P)$(R)ArrayRate_RBV</pv_name>
+    <x>200</x>
+    <y>610</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Images:</text>
+    <x>10</x>
+    <y>610</y>
+  </widget>
+</display>

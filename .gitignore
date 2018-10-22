@@ -15,6 +15,7 @@ tools/asyn*
 tools/re2c*
 tools/seq*
 tools/busy*
+tools/areaDetector*
 
 # Examples installed from Phoebus/CSS
 examples/Display\ Builder

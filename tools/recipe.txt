@@ -103,6 +103,54 @@ make
 echo "BUSY = "`pwd` >> ~/epics-train/RELEASE.local
 
 
+# SSCAN module (not used)
+#wget https://epics.anl.gov/bcda/synApps/tar/sscan_R2-10.tar.gz
+#tar vzxf sscan_R2-10.tar.gz 
+#rm sscan_R2-10.tar.gz 
+#cd sscan-2-10/
+#cp ../ether_ip/configure/RELEASE configure/
+#make
+#echo "SSCAN = "`pwd` >> ~/epics-train/RELEASE.local
+
+
+# CALC module (doesn't compile for EPICS 7)
+#wget https://github.com/epics-modules/calc/archive/R3-6-1.tar.gz
+#tar vzxf R3-6-1.tar.gz 
+#rm R3-6-1.tar.gz 
+
+
+#    areaDetector
+wget https://github.com/areaDetector/areaDetector/archive/R3-3-2.zip
+unzip R3-3-2.zip 
+mv areaDetector-R3-3-2 areaDetector
+rm R3-3-2.zip 
+
+wget https://github.com/areaDetector/ADCore/archive/R3-3-2.zip
+unzip R3-3-2.zip 
+rm -rf areaDetector/ADCore/*
+mv ADCore-R3-3-2/* areaDetector/ADCore/
+rm R3-3-2.zip 
+rm -rf ADCore-R3-3-2
+
+wget https://github.com/areaDetector/ADSupport/archive/R1-4.zip
+unzip R1-4.zip 
+rm -rf areaDetector/ADSupport/*
+mv ADSupport-R1-4/* areaDetector/ADSupport
+rm -rf ADSupport-R1-4/
+rm R1-4.zip 
+
+wget https://github.com/areaDetector/ADSimDetector/archive/R2-8.zip
+unzip R2-8.zip 
+mv ADSimDetector-R2-8/* areaDetector/ADSimDetector/
+rm -rf ADSimDetector-R2-8/
+rm R2-8.zip 
+
+# Edit many of the areaDetector/configure/* files...
+cd areaDetector
+make
+
+
+
 # Example V4 image and SNS neutron data similator
 cd ~/epics-train/tools
 git clone https://github.com/kasemir/EPICSV4Sandbox.git
