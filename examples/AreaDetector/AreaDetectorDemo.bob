@@ -27,12 +27,12 @@
     <name>Action Button</name>
     <actions>
       <action type="open_display">
-        <file>simDetectorSetup.opi</file>
+        <file>commonPlugins.opi</file>
         <target>replace</target>
-        <description>Setup</description>
+        <description>Plugins</description>
       </action>
     </actions>
-    <x>10</x>
+    <x>120</x>
     <y>31</y>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -45,7 +45,7 @@
         <description>Detector</description>
       </action>
     </actions>
-    <x>120</x>
+    <x>10</x>
     <y>31</y>
     <tooltip>$(actions)</tooltip>
   </widget>
