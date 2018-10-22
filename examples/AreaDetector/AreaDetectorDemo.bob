@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
-  <name>Display</name>
+  <name>Area Detector</name>
   <macros>
     <P>13SIM1:</P>
     <R>cam1:</R>
@@ -53,25 +53,53 @@
     <name>Label_1</name>
     <text>1) cd /home/training/epics-train/examples/AreaDetector
    ./start_sim_ioc.sh
-
 2) Open Detector page
 3) Press Connect.. "Start"
 4) Open Plugins.. "All" and "Enable" the NDPluginStdArrays
 </text>
     <x>10</x>
     <y>80</y>
-    <width>400</width>
+    <width>390</width>
     <height>180</height>
   </widget>
   <widget type="image" version="2.0.0">
     <name>Image</name>
     <pv_name>$(P)image1:ArrayData</pv_name>
     <x>10</x>
-    <y>190</y>
+    <y>200</y>
     <width>720</width>
-    <height>410</height>
+    <height>400</height>
+    <x_axis>
+      <visible>true</visible>
+      <title>X</title>
+      <minimum>0.0</minimum>
+      <maximum>1024.0</maximum>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+    </x_axis>
+    <y_axis>
+      <visible>true</visible>
+      <title>Y</title>
+      <minimum>1024.0</minimum>
+      <maximum>0.0</maximum>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+    </y_axis>
     <data_width>1024</data_width>
     <data_height>1024</data_height>
+    <unsigned>true</unsigned>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>TextUpdate</name>
@@ -90,5 +118,58 @@
     <text>Images:</text>
     <x>10</x>
     <y>610</y>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(R)Acquire</pv_name>
+        <value>0</value>
+      </action>
+    </actions>
+    <pv_name>$(P)$(R)Acquire</pv_name>
+    <text>Stop</text>
+    <x>457</x>
+    <y>115</y>
+    <width>59</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(R)Acquire</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(P)$(R)Acquire</pv_name>
+    <text>Start</text>
+    <x>390</x>
+    <y>115</y>
+    <width>59</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button</name>
+    <pv_name>$(P)image1:EnableCallbacks</pv_name>
+    <x>390</x>
+    <y>145</y>
+    <width>126</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>
