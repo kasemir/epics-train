@@ -41,7 +41,6 @@ wget https://github.com/skvadrik/re2c/releases/download/1.1/re2c-1.1.tar.gz
 tar vzxf re2c-1.1.tar.gz
 rm re2c-1.1.tar.gz
 cd re2c-1.1
-./autogen.sh 
 ./configure 
 make
 sudo make install
