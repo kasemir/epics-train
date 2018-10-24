@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Asyn Demo</name>
+  <macros>
+    <P>demo:</P>
+    <R>1</R>
+  </macros>
+  <x>1217</x>
+  <y>235</y>
+  <width>640</width>
+  <height>380</height>
+  <actions>
+  </actions>
+  <widget type="databrowser" version="2.0.0">
+    <name>Data Browser</name>
+    <file>Value.plt</file>
+    <x>10</x>
+    <y>10</y>
+    <width>620</width>
+    <height>330</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Range:</text>
+    <x>10</x>
+    <y>350</y>
+    <width>70</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>demo:1:Range</pv_name>
+    <x>70</x>
+    <y>350</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Update Time:</text>
+    <x>220</x>
+    <y>350</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>demo:1:UpdateTime</pv_name>
+    <x>310</x>
+    <y>350</y>
+  </widget>
+</display>
