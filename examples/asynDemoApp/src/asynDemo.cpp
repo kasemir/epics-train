@@ -24,9 +24,7 @@
 static const char *driverName="asynDemo";
 void simTask(void *drvPvt);
 
-
-/** Constructor for the asynDemo class.
- *  Calls constructor for the asynPortDriver base class.
+/** Constructor, calls asynPortDriver base constructor.
  *  \param[in] portName The name of the asyn port driver to be created.
  */
 asynDemo::asynDemo(const char *portName) 
@@ -58,10 +56,8 @@ asynDemo::asynDemo(const char *portName)
                           epicsThreadGetStackSize(epicsThreadStackMedium),
                           (EPICSTHREADFUNC)::simTask,
                           this) == NULL);
-    if (status) {
+    if (status)
         printf("%s:%s: epicsThreadCreate failure\n", driverName, functionName);
-        return;
-    }
 }
 
 
@@ -82,9 +78,11 @@ void asynDemo::simTask(void)
     {
         getDoubleParam(P_UpdateTime, &updateTime);
         // Release the lock while we wait for updateTime
+        // Usually this just delays for updateTime seconds,
+        // but when the updateTime parameter is changed,
+        // we wake ASAP
         unlock();
         epicsEventWaitWithTimeout(eventId_, updateTime);
-        // Take the lock again
         lock(); 
 
         getDoubleParam(P_Range, &range);
@@ -118,9 +116,7 @@ asynStatus asynDemo::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
 }
 
 
-/* EPICS boilerplate for registering 'asynDemoConfigure(portName')
- * in IOC shell
- */
+/* EPICS boilerplate for registering 'asynDemoConfigure(portName') in IOC shell */
 
 extern "C"
 {
