@@ -184,6 +184,7 @@ phoebus
 # Applications, Display, Examples, Install in ~training/epics-train/examples,
 # i.e. creating examples/Display Builder
 
+
 # PyEpics CA client
 cd ~/epics-train/tools/
 wget https://github.com/pyepics/pyepics/archive/
@@ -195,7 +196,6 @@ cd ..
 rm 3.3.1.zip
 sudo rm -rf pyepics-3.3.1
 
-
 # EPICS pvaPY Module
 cd ~/epics-train/tools/
 sudo yum install -y numpy
@@ -206,6 +206,25 @@ git clone https://github.com/epics-base/pvaPy.git
 cd pvaPy
 make configure EPICS_BASE=$EPICS_BASE
 make
+
+# PCAS
+cd ~/epics-train/tools/
+wget https://github.com/epics-modules/pcas/archive/v4.13.2.zip
+unzip v4.13.2.zip 
+rm v4.13.2.zip 
+cd pcas-4.13.2/
+cp ../ether_ip/configure/RELEASE configure/
+make
+
+# PCASPY
+cd ~/epics-train/tools/
+wget https://github.com/paulscherrerinstitute/pcaspy/archive/0.7.1.zip
+unzip 0.7.1.zip 
+rm 0.7.1.zip 
+cd pcaspy-0.7.1
+# Fix setup.py, see https://github.com/paulscherrerinstitute/pcaspy/issues/57
+python setup.py build
+sudo python setup.py install
 
 
 # ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

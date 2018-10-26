@@ -16,6 +16,8 @@ tools/re2c*
 tools/seq*
 tools/busy*
 tools/areaDetector*
+tools/pcas-*
+tools/pcaspy-*
 
 # Examples installed from Phoebus/CSS
 examples/Display\ Builder
