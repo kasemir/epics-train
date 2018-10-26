@@ -6,7 +6,7 @@ import thread, time, random
 prefix = 'Python:'
 pvdb = {
     'RANGE' : { 'prec' : 1 },
-    'RND'   : { 'prec' : 3 },
+    'RND'   : { 'prec' : 3, 'unit': 'Ticks', 'hilim': 100 },
 }
 
 class MyDriver(Driver):
@@ -45,6 +45,9 @@ server.createPV(prefix, pvdb)
 driver = MyDriver()
 
 print("Try               camonitor Python:RND")
+print("Try               caget -d CTRL_DOUBLE Python:RND")
+print("Try               caget Python:RND.EGU")
+print("Try phoebus 'PV Tree' for Python:RND")
 print("Change range via  caput Python:RANGE 10")
 
 while True:
