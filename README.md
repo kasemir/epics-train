@@ -59,6 +59,8 @@ sudo /run/media/training/VB*/VBoxLinuxAdditions.run
 
 Applications, System Tools, Settings:
 Under Details, Users, select Automatic Login for the 'training' user.
+(Seemed to reset to no-automatic-login.
+ Try also via the 'power' button in toolbar, training, Account Settings)
 Under Power, set Blank Screen to 'Never' and turn Automatic Suspend off.
 
 Restart VM once more. The VM's display will now follow the size of the host window.
