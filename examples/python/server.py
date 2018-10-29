@@ -20,6 +20,8 @@ x = 1
 while True:
     pv['x'] = x
     pv['y'] = 2*x
+    print(x, 2*x)
+    server.update(pv)
     sleep(1)
     x = x + 1
 
