@@ -19,12 +19,27 @@ sudo systemctl disable firewalld
 # EPICS Base
 sudo yum install -y readline-devel
 cd ~/epics-train/tools
-wget https://epics.anl.gov/download/base/base-7.0.1.1.tar.gz
-tar vzxf base-7.0.1.1.tar.gz
-rm base-7.0.1.1.tar.gz
-cd base-7.0.1.1
+
+
+#wget https://epics.anl.gov/download/base/base-7.0.1.1.tar.gz
+#tar vzxf base-7.0.1.1.tar.gz
+#rm base-7.0.1.1.tar.gz
+#cd base-7.0.1.1
+
+# Looks like base-7.0.1.1, but test pvtools update
+rm -rf base-7.0.1.1
+git clone --recursive https://github.com/epics-base/epics-base
+ln -s epics-base base-7.0.1.1
+cd epics-base/modules/pvData
+git remote add md https://github.com/mdavidsaver/pvDataCPP
+git fetch md
+git reset --hard md/structformatter
+cd ../pvAccess
+git remote add md https://github.com/mdavidsaver/pvAccessCPP
+git fetch md
+git reset --hard md/pvtoolsrework
+cd ../..
 make clean uninstall
-make
 
 
 # EtherIP
