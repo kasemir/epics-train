@@ -18,6 +18,7 @@ tools/busy*
 tools/areaDetector*
 tools/pcas-*
 tools/pcaspy-*
+tools/archive-engine-*
 
 # Examples installed from Phoebus/CSS
 examples/Display\ Builder

@@ -242,17 +242,25 @@ python setup.py build
 sudo python setup.py install
 
 
+# MySQL
+sudo yum install mariadb-server
+sudo systemctl start mariadb
+# Set root password, which is initially empty, to '$root'
+/usr/bin/mysql_secure_installation
+sudo systemctl enable mariadb.service
+
+# Install archive user and tables as described in
+# https://github.com/shroffk/phoebus/blob/master/services/archive-engine/doc/index.rst
+
+
+# Archive engine
+cd ~/epics-train/tools
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/archive-engine-0.0.1.zip
+unzip archive-engine-0.0.1.zip 
+rm archive-engine-0.0.1.zip 
+
+
 # ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-# CSS
-wget https://ics-web.sns.ornl.gov/css/nightly/basic-epics-4.5.0-linux.gtk.x86_64.zip
-unzip basic-epics-4.5.0-linux.gtk.x86_64.zip
-mv basic-epics-4.5.0 CSS
-rm basic-epics-4.5.0-linux.gtk.x86_64.zip
-
-# Exit CSS in 'CS-Studio' perspective
-
-
 
 # EDM
 cd ~/epics-train/tools
@@ -288,19 +296,6 @@ edm -addpv /home/training/epics-train/tools/extensions/lib/linux-x86_64/libLoc.s
 
 cd /home/training/epics-train/tools
 cp edm_fonts.list extensions/src/edm/setup/fonts.list
-
-
-# C-Python support for CSS
-sudo easy_install py4j
-
-mkdir /tmp/s
-cd /tmp/s
-unzip ~/epics-train/tools/CSS/plugins/org.csstudio.display.builder.runtime_*.jar 
-cd scripts/
-sudo python setup.py install
-cd
-rm -rf /tmp/s
-
 
 
 cd ~/epics-train/examples

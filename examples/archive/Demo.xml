@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineconfig>
+  <group>
+    <name>Demo</name>
+    <channel>
+      <name>freddy</name>
+      <scan/>
+      <period>0.1</period>
+    </channel>
+    <channel>
+      <name>sim://noiseWaveform(0,10,100,10)</name>
+      <scan/>
+      <period>0.1</period>
+    </channel>
+    <channel>
+      <name>sim://sine(0, 10, 50, 0.1)</name>
+      <scan/>
+      <period>0.1</period>
+    </channel>
+  </group>
+</engineconfig>

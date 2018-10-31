@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineconfig>
+  <group>
+    <name>Demo</name>
+    <channel>
+      <name>training:setpoint</name>
+      <monitor/>
+      <period>1</period>
+    </channel>
+    <channel>
+      <name>training:tank</name>
+      <monitor/>
+      <period>5</period>
+    </channel>
+  </group>
+</engineconfig>
