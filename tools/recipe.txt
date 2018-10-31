@@ -245,6 +245,7 @@ sudo python setup.py install
 # MySQL
 sudo yum install mariadb-server
 sudo systemctl start mariadb
+sudo systemctl status mariadb
 # Set root password, which is initially empty, to '$root'
 /usr/bin/mysql_secure_installation
 sudo systemctl enable mariadb.service
@@ -258,6 +259,41 @@ cd ~/epics-train/tools
 wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/archive-engine-0.0.1.zip
 unzip archive-engine-0.0.1.zip 
 rm archive-engine-0.0.1.zip 
+
+
+# Kafka
+# Follows https://github.com/shroffk/phoebus/blob/master/app/alarm/Readme.md
+cd ~/epics-train/tools
+wget http://mirrors.gigenet.com/apache/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+tar -vzxf kafka_2.11-2.0.0.tgz
+ln -s kafka_2.11-2.0.0 kafka
+
+sudo mkdir /var/kafka
+sudo chown training /var/kafka
+# Update to use dirs under /var/kafka
+vi kafka/config/zookeeper.properties 
+vi kafka/config/server.properties 
+
+sudo cp zookeeper.service /etc/systemd/system
+sudo systemctl start zookeeper.service
+sudo systemctl status zookeeper.service
+netstat -an | fgrep 2181
+
+sudo cp kafka.service /etc/systemd/system
+sudo systemctl start kafka.service
+sudo systemctl status kafka.service
+netstat -an | fgrep 9092
+
+sudo systemctl enable zookeeper.service
+sudo systemctl enable kafka.service
+
+sh create_alarm_topics.sh Accelerator
+
+
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/alarm-server-0.0.1.zip
+unzip alarm-server-0.0.1.zip 
+rm alarm-server-0.0.1.zip 
+
 
 
 # ^^^^^^^^^^^^^^^^^^^^ DONE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

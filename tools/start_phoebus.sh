@@ -11,4 +11,4 @@ OPT="-settings /home/training/epics-train/tools/phoebus.ini"
 # To get one instance, use server mode
 #OPT="$OPT -server 4918"
 
-java -Dprism.forceGPU=true -Dorg.csstudio.javafx.rtplot.update_counter=false --add-modules=java.corba -jar $JAR $OPT $SETTINGS "$@" &
+java -Dlogback.configurationFile=/home/training/epics-train/tools/logback.xml -Dprism.forceGPU=true -Dorg.csstudio.javafx.rtplot.update_counter=false --add-modules=java.corba -jar $JAR $OPT $SETTINGS "$@" &
