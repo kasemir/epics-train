@@ -8,6 +8,7 @@ cd ~/epics-train/tools/phoebus-0.0.1
 JAR=product-0.0.1.jar
 
 OPT="-settings /home/training/epics-train/tools/phoebus.ini"
+OPT+=" -Djdk.gtk.version=2"
 # To get one instance, use server mode
 #OPT="$OPT -server 4918"
 
