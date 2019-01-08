@@ -47,7 +47,7 @@ driver = MyDriver()
 print("Try               camonitor Python:RND")
 print("Try               caget -d CTRL_DOUBLE Python:RND")
 print("Try               caget Python:RND.EGU")
-print("Try phoebus 'PV Tree' for Python:RND")
+print("Try css 'PV Tree' for Python:RND")
 print("Change range via  caput Python:RANGE 10")
 
 while True:
