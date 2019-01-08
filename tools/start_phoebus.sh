@@ -11,4 +11,11 @@ OPT="-settings /home/training/epics-train/tools/phoebus.ini"
 # To get one instance, use server mode
 #OPT="$OPT -server 4918"
 
-java -Dlogback.configurationFile=/home/training/epics-train/tools/logback.xml -Dprism.forceGPU=true -Dorg.csstudio.javafx.rtplot.update_counter=false -Djdk.gtk.version=2 -jar $JAR $OPT $SETTINGS "$@" &
+JDK_JAVA_OPTIONS=" -DCA_DISABLE_REPEATER=true"
+JDK_JAVA_OPTIONS+=" -Dnashorn.args=--no-deprecation-warning"
+JDK_JAVA_OPTIONS+=" -Djdk.gtk.verbose=false -Djdk.gtk.version=2  -Dprism.forceGPU=true"
+JDK_JAVA_OPTIONS+=" -Dlogback.configurationFile=/home/training/epics-train/tools/logback.xml"
+JDK_JAVA_OPTIONS+=" -Dorg.csstudio.javafx.rtplot.update_counter=false"
+export JDK_JAVA_OPTIONS
+
+java -jar $JAR $OPT $SETTINGS "$@" &
