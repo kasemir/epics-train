@@ -26,7 +26,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>pva://training:ramp</pv_name>
+    <pv_name>pva://ramp</pv_name>
     <x>100</x>
     <y>50</y>
   </widget>
@@ -50,7 +50,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>pva://training:ramp/display</pv_name>
+    <pv_name>pva://ramp/display</pv_name>
     <x>100</x>
     <y>80</y>
     <width>260</width>
@@ -58,7 +58,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
-    <pv_name>pva://training:ramp/display/units</pv_name>
+    <pv_name>pva://ramp/display/units</pv_name>
     <x>100</x>
     <y>200</y>
     <width>260</width>
