@@ -1,4 +1,4 @@
-export EPICS_BASE=$HOME/epics-train/tools/base-7.0.1.1
+export EPICS_BASE=$HOME/epics-train/tools/base-7.0.2
 export EPICS_HOST_ARCH=linux-x86_64
 # Possible addresses on VM: 127.0.0.1 10.0.2.15 10.0.2.255 192.168.122.255
 # 127.0.0.1 "works", but only for one IOC

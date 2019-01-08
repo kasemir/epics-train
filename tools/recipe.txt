@@ -19,27 +19,11 @@ sudo systemctl disable firewalld
 # EPICS Base
 sudo yum install -y readline-devel
 cd ~/epics-train/tools
-
-
-#wget https://epics.anl.gov/download/base/base-7.0.1.1.tar.gz
-#tar vzxf base-7.0.1.1.tar.gz
-#rm base-7.0.1.1.tar.gz
-#cd base-7.0.1.1
-
-# Looks like base-7.0.1.1, but test pvtools update
-rm -rf base-7.0.1.1
-git clone --recursive https://github.com/epics-base/epics-base
-ln -s epics-base base-7.0.1.1
-cd epics-base/modules/pvData
-git remote add md https://github.com/mdavidsaver/pvDataCPP
-git fetch md
-git reset --hard md/structformatter
-cd ../pvAccess
-git remote add md https://github.com/mdavidsaver/pvAccessCPP
-git fetch md
-git reset --hard md/pvtoolsrework
-cd ../..
-make clean uninstall
+wget https://epics.anl.gov/download/base/base-7.0.2.tar.gz
+tar vzxf base-7.0.2.tar.gz
+rm base-7.0.2.tar.gz 
+cd base-7.0.2
+make 
 
 
 # EtherIP
@@ -86,10 +70,10 @@ echo "AUTOSAVE = "`pwd` >> ~/epics-train/RELEASE.local
 
 # Asyn
 cd ~/epics-train/tools
-wget https://www.aps.anl.gov/epics/download/modules/asyn4-33.tar.gz
-tar vzxf asyn4-33.tar.gz
-rm asyn4-33.tar.gz
-cd asyn4-33
+wget https://www.aps.anl.gov/epics/download/modules/asyn4-34.tar.gz
+tar vzxf asyn4-34.tar.gz
+rm asyn4-34.tar.gz
+cd asyn4-34
 cp ../ether_ip/configure/RELEASE configure
 make
 echo "ASYN = "`pwd` >> ~/epics-train/RELEASE.local
@@ -178,7 +162,9 @@ git clone https://github.com/kasemir/EPICSV4Sandbox.git
 # and JDK11 from http://jdk.java.net/11/
 tar vzxf jdk-8u*-linux-x64.tar.gz
 tar vzxf jdk-10*linux-x64*.tar.gz
-tar vzxf openjdk-11_linux-x64_bin.tar.gz
+tar vzxf openjdk-11.0.1_linux-x64_bin.tar.gz
+rm openjdk-11.0.1_linux-x64_bin.tar.gz
+ln -s jdk-11.0.1 jdk-11
 
 # VDCT
 cd ~/epics-train/tools/

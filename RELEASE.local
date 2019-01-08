@@ -4,8 +4,8 @@
 
 # Do NOT define 'EPICS_BASE' as name in here,
 # but still need to list BASE for some of the apps to build.
-# EPICS_BASE=/home/training/epics-train/tools/base-7.0.1.1
-BASE=/home/training/epics-train/tools/base-7.0.1.1
+EPICS_BASE=/home/training/epics-train/tools/base-7.0.2
+BASE=/home/training/epics-train/tools/base-7.0.2
 
 # Used to be in V4, now in base
 # BASEV4=~/epics-train/tools/EPICS-CPP-4.6.0
@@ -17,8 +17,8 @@ BASE=/home/training/epics-train/tools/base-7.0.1.1
 # PVCOMMON=$(BASEV4)/pvCommonCPP
 
 ETHER_IP = /home/training/epics-train/tools/ether_ip
-AUTOSAVE = /home/training/epics-train/tools/autosave-R5-9
-ASYN = /home/training/epics-train/tools/asyn4-33
-STREAM = /home/training/epics-train/tools/StreamDevice-master
 SNCSEQ = /home/training/epics-train/tools/seq-2.2.6
+AUTOSAVE = /home/training/epics-train/tools/autosave-R5-9
+ASYN = /home/training/epics-train/tools/asyn4-34
+STREAM = /home/training/epics-train/tools/StreamDevice-master
 BUSY = /home/training/epics-train/tools/busy-1-6-1
