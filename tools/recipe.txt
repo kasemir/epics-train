@@ -157,11 +157,10 @@ git clone https://github.com/kasemir/EPICSV4Sandbox.git
 
 
 # Java
-# Can't automate. Need to download JDK 8 (tar.gz, not the rpm) and 10
+# Can't automate. Need to download JDK 8 (tar.gz, not the rpm)
 # from http://www.oracle.com/technetwork/java/javase/downloads/index.html
 # and JDK11 from http://jdk.java.net/11/
 tar vzxf jdk-8u*-linux-x64.tar.gz
-tar vzxf jdk-10*linux-x64*.tar.gz
 tar vzxf openjdk-11.0.1_linux-x64_bin.tar.gz
 rm openjdk-11.0.1_linux-x64_bin.tar.gz
 ln -s jdk-11.0.1 jdk-11
@@ -188,14 +187,14 @@ phoebus
 
 # PyEpics CA client
 cd ~/epics-train/tools/
-wget https://github.com/pyepics/pyepics/archive/
-unzip 3.3.1.zip
-cd pyepics-3.3.1
+wget https://github.com/pyepics/pyepics/archive/3.3.2.zip
+unzip 3.3.2.zip
+cd pyepics-3.3.2
 python setup.py build
 sudo python setup.py install
 cd ..
-rm 3.3.1.zip
-sudo rm -rf pyepics-3.3.1
+rm 3.3.2.zip
+sudo rm -rf pyepics-3.3.2
 
 # EPICS pvaPY Module
 cd ~/epics-train/tools/
@@ -209,23 +208,31 @@ make configure EPICS_BASE=$EPICS_BASE
 make
 
 # PCAS
-cd ~/epics-train/tools/
+# Build inside EPICS base as one of the modules
+# because that's where PVASPY expects it
+cd $EPICS_BASE/modules
 wget https://github.com/epics-modules/pcas/archive/v4.13.2.zip
 unzip v4.13.2.zip 
 rm v4.13.2.zip 
-cd pcas-4.13.2/
-cp ../ether_ip/configure/RELEASE configure/
+mv pcas-4.13.2 pcas
+
+cat <<END >Makefile.local
+SUBMODULES += pcas
+pcas_DEPEND_DIRS = libcom
+END
+
+echo EPICS_BASE=$EPICS_BASE >pcas/configure/RELEASE.local
 make
+
 
 # PCASPY
 cd ~/epics-train/tools/
-wget https://github.com/paulscherrerinstitute/pcaspy/archive/0.7.1.zip
-unzip 0.7.1.zip 
-rm 0.7.1.zip 
-cd pcaspy-0.7.1
-# Fix setup.py, see https://github.com/paulscherrerinstitute/pcaspy/issues/57
+wget https://github.com/paulscherrerinstitute/pcaspy/archive/0.7.2.zip
+unzip 0.7.2.zip 
+rm 0.7.2.zip 
+cd pcaspy-0.7.2
 python setup.py build
-sudo python setup.py install
+sudo EPICS_BASE=$EPICS_BASE EPICS_HOST_ARCH=$EPICS_HOST_ARCH python setup.py install
 
 
 # MySQL
@@ -234,7 +241,8 @@ sudo systemctl start mariadb
 sudo systemctl status mariadb
 # Set root password, which is initially empty, to '$root'
 /usr/bin/mysql_secure_installation
-sudo systemctl enable mariadb.service
+sudo systemctl enable mariadb
+
 
 # Install archive user and tables as described in
 # https://github.com/shroffk/phoebus/blob/master/services/archive-engine/doc/index.rst
@@ -261,20 +269,19 @@ vi kafka/config/zookeeper.properties
 vi kafka/config/server.properties 
 
 sudo cp zookeeper.service /etc/systemd/system
-sudo systemctl start zookeeper.service
-sudo systemctl status zookeeper.service
+sudo systemctl start zookeeper
+sudo systemctl status zookeeper
 netstat -an | fgrep 2181
 
 sudo cp kafka.service /etc/systemd/system
-sudo systemctl start kafka.service
-sudo systemctl status kafka.service
+sudo systemctl start kafka
+sudo systemctl status kafka
 netstat -an | fgrep 9092
 
 sudo systemctl enable zookeeper.service
 sudo systemctl enable kafka.service
 
 sh create_alarm_topics.sh Accelerator
-
 
 wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/alarm-server-0.0.1.zip
 unzip alarm-server-0.0.1.zip 
