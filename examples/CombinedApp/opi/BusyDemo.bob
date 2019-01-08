@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Busy Record</text>
+    <width>550</width>
+    <height>31</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Setpoint:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>DemoDevice</pv_name>
+    <x>100</x>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Readback:</text>
+    <y>80</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>DemoDeviceReadback</pv_name>
+    <x>100</x>
+    <y>80</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <class>WARNING</class>
+    <pv_name>DemoDeviceBusy</pv_name>
+    <x>100</x>
+    <y>110</y>
+    <off_color use_class="true">
+      <color red="105" green="74" blue="44">
+      </color>
+    </off_color>
+    <on_color use_class="true">
+      <color name="Attention" red="255" green="160" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Busy:</text>
+    <y>110</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <x>460</x>
+    <y>160</y>
+    <width>10</width>
+    <height>0</height>
+  </widget>
+</display>
