@@ -55,8 +55,7 @@
    ./start_sim_ioc.sh
 2) Open Detector page
 3) Press Connect.. "Start"
-4) Open Plugins.. "All" and "Enable" the NDPluginStdArrays
-</text>
+4) Open Plugins.. "All" and "Enable" the NDPluginPVA</text>
     <x>10</x>
     <y>80</y>
     <width>390</width>
@@ -159,7 +158,7 @@
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Menu Button</name>
-    <pv_name>$(P)image1:EnableCallbacks</pv_name>
+    <pv_name>$(P)Pva1:EnableCallbacks</pv_name>
     <x>390</x>
     <y>145</y>
     <width>126</width>
