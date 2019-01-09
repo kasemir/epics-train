@@ -331,9 +331,14 @@ cd ~/epics-train/examples
 make
 
 
-# State before taking snapwhot of VM:
+# Reduce VM size
+1) Fill disk with zeros
+sudo dd if=/dev/zero of=emptyfile bs=1M
+sudo rm emptyfile 
+2) Exit VM, clone VM, export clone
+
+
+# State before taking snapshot of VM:
 rm -rf ~/.ssh
-rm -rf ~/.phoebus
-# CSS left in reset 'CS-Studio' perspective,
-# no files added, no "Display Builder" samples installed,
-# ~/.bash_history cleared
+rm -rf ~/.phoebus or leave in desired layout
+# ~/.bash_history cleared or sanitized
