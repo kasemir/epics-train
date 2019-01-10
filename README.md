@@ -82,3 +82,10 @@ Invoke Applications, Utilities, Tweak Tool.
 Configure Desktop, Background: Use epics-train/EPICS.png, centered
 Configure Windows, Titlebar, Middle Click: Lower
 
+
+Zoom:
+Global zoom of GTK tools (CSS, GEdit, ...):
+  export GDK_SCALE=2
+
+GEdit: Doesn't seem to support Ctrl +/- or Ctrl Scrollwheel zoom.
+When GEdit is running, use Text Editor -> Preferences -> Font & Color from menu to change font size.
