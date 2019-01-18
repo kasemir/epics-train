@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Seq Display</name>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <x>509</x>
+    <y>381</y>
+    <width>17</width>
+    <height>95</height>
+    <line_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>one:outFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="tank" version="2.0.0">
+    <name>Tank</name>
+    <pv_name>one:level</pv_name>
+    <x>180</x>
+    <y>173</y>
+    <width>195</width>
+    <fill_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </fill_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <minimum>1.0</minimum>
+    <maximum>22.0</maximum>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <x>226</x>
+    <y>173</y>
+    <width>17</width>
+    <height>193</height>
+    <line_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>one:inFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_5</name>
+    <x>550</x>
+    <y>130</y>
+    <width>180</width>
+    <height>280</height>
+    <line_color>
+      <color red="204" green="204" blue="204">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="204" green="204" blue="204">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Temp</text>
+    <x>47</x>
+    <y>165</y>
+    <width>40</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>one:temp</pv_name>
+    <x>50</x>
+    <y>390</y>
+    <precision>1</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Seq Display</text>
+    <x>10</x>
+    <y>10</y>
+    <width>130</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_1</name>
+    <x>37</x>
+    <y>135</y>
+    <width>209</width>
+    <height>60</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </background_color>
+    <points>
+      <point x="187.00000762939453" y="0.0">
+      </point>
+      <point x="208.00000762939453" y="15.0">
+      </point>
+      <point x="209.00000762939453" y="60.0">
+      </point>
+      <point x="187.0" y="60.0">
+      </point>
+      <point x="187.0" y="28.0">
+      </point>
+      <point x="174.99999237060547" y="20.0">
+      </point>
+      <point x="0.0" y="20.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="fillColor" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:inFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_2</name>
+    <x>373</x>
+    <y>140</y>
+    <width>162</width>
+    <height>260</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="255" blue="255">
+      </color>
+    </background_color>
+    <points>
+      <point x="0.0" y="200.0">
+      </point>
+      <point x="14.000000000000057" y="200.33333587646484">
+      </point>
+      <point x="14.0" y="0.0">
+      </point>
+      <point x="134.0" y="0.0">
+      </point>
+      <point x="155.0" y="18.0">
+      </point>
+      <point x="155.0" y="260.0">
+      </point>
+      <point x="134.0" y="260.0">
+      </point>
+      <point x="134.0" y="30.00000762939453">
+      </point>
+      <point x="120.0" y="20.0">
+      </point>
+      <point x="38.0" y="20.0">
+      </point>
+      <point x="38.0" y="222.0">
+      </point>
+      <point x="0.0" y="222.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="outColor" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:outFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <x>560</x>
+    <y>190</y>
+    <width>1</width>
+    <height>1</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_2</name>
+    <x>430</x>
+    <y>129</y>
+    <width>50</width>
+    <height>40</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>433</x>
+    <y>149</y>
+    <width>38</width>
+    <height>1</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>10</arrow_length>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="visible" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Grid" red="128" green="128" blue="128">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:outFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>400</x>
+    <y>154</y>
+    <width>1</width>
+    <height>1</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&gt;0">
+          <value>true</value>
+        </exp>
+        <pv_name>one:outFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="multi_state_led" version="2.0.0">
+    <name>LED (Multi State)</name>
+    <x>900</x>
+    <y>290</y>
+    <width>1</width>
+    <height>1</height>
+    <states>
+      <state>
+        <value>0</value>
+        <label>State 1</label>
+        <color>
+          <color name="Off" red="60" green="100" blue="60">
+          </color>
+        </color>
+      </state>
+      <state>
+        <value>1</value>
+        <label>State 2</label>
+        <color>
+          <color name="On" red="0" green="255" blue="0">
+          </color>
+        </color>
+      </state>
+    </states>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <x>235</x>
+    <y>408</y>
+    <width>109</width>
+    <height>26</height>
+    <line_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="0.0" y="20.0">
+      </point>
+      <point x="10.0" y="0.0">
+      </point>
+      <point x="20.0" y="20.0">
+      </point>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="40.0" y="20.0">
+      </point>
+      <point x="50.0" y="0.0">
+      </point>
+      <point x="60.0" y="20.0">
+      </point>
+      <point x="70.0" y="0.0">
+      </point>
+      <point x="80.0" y="20.0">
+      </point>
+      <point x="90.0" y="0.0">
+      </point>
+      <point x="100.0" y="20.0">
+      </point>
+      <point x="110.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="visible" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:heater</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <x>107</x>
+    <y>125</y>
+    <width>50</width>
+    <height>40</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Grid" red="128" green="128" blue="128">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_4</name>
+    <x>132</x>
+    <y>149</y>
+    <width>1</width>
+    <height>1</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="New Rule" prop_id="name" out_exp="false">
+        <exp bool_exp="new exp">
+          <value>Polyline_3</value>
+        </exp>
+        <pv_name>one:inFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Fault</text>
+    <x>590</x>
+    <y>160</y>
+    <width>58</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>one:faultLamp</pv_name>
+    <x>648</x>
+    <y>160</y>
+    <off_color>
+      <color red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Init. Timeout</text>
+    <x>593</x>
+    <y>240</y>
+    <width>97</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>one:fillTimeout</pv_name>
+    <x>593</x>
+    <y>260</y>
+    <rules>
+      <rule name="visible" prop_id="visible" out_exp="false">
+        <pv_name>one:initialTimeout</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="thermometer" version="2.0.0">
+    <name>Thermometer</name>
+    <pv_name>one:temp</pv_name>
+    <x>80</x>
+    <y>190</y>
+    <width>22</width>
+    <height>190</height>
+    <fill_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </fill_color>
+    <limits_from_pv>false</limits_from_pv>
+    <maximum>35.0</maximum>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Fill Timeout</text>
+    <x>27</x>
+    <y>115</y>
+    <width>80</width>
+    <rules>
+      <rule name="visible" prop_id="visible" out_exp="false">
+        <pv_name>one:fillTimeout</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Action Button_2</name>
+    <pv_name>one:systemReset</pv_name>
+    <x>590</x>
+    <y>190</y>
+    <off_label>reset</off_label>
+    <on_label></on_label>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>false</show_confirm_dialog>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>one:highLevel</pv_name>
+    <x>144</x>
+    <y>193</y>
+    <off_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </off_color>
+    <line_color>
+      <color red="50" green="50" blue="50" alpha="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>one:lowLevel</pv_name>
+    <x>144</x>
+    <y>343</y>
+    <off_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </off_color>
+    <line_color>
+      <color red="50" green="50" blue="50" alpha="0">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_1</name>
+    <x>238</x>
+    <y>380</y>
+    <width>55</width>
+    <height>12</height>
+    <start_angle>180.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="128" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:impeller</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_3</name>
+    <x>288</x>
+    <y>380</y>
+    <width>55</width>
+    <height>12</height>
+    <start_angle>180.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="128" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:impeller</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_2</name>
+    <x>288</x>
+    <y>380</y>
+    <width>55</width>
+    <height>12</height>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="128" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:impeller</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <x>238</x>
+    <y>380</y>
+    <width>55</width>
+    <height>12</height>
+    <total_angle>180.0</total_angle>
+    <line_color>
+      <color red="0" green="128" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="128" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Background" red="255" green="255" blue="255">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:impeller</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Action Button</name>
+    <pv_name>one:systemEnable</pv_name>
+    <x>590</x>
+    <y>291</y>
+    <off_label>disabled</off_label>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_label>enabled</on_label>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>false</show_confirm_dialog>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Action Button_1</name>
+    <pv_name>one:pause</pv_name>
+    <x>590</x>
+    <y>340</y>
+    <off_label>pause</off_label>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_label>resume</on_label>
+    <on_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>false</show_confirm_dialog>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_7</name>
+    <x>113</x>
+    <y>145</y>
+    <width>38</width>
+    <height>1</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <arrows>2</arrows>
+    <arrow_length>10</arrow_length>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="35.0" y="0.0">
+      </point>
+    </points>
+    <rules>
+      <rule name="visible" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Grid" red="128" green="128" blue="128">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>one:inFlowPump</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>

@@ -1,0 +1,32 @@
+# list of users
+UAG(normUsers) {training}
+UAG(expertUsers) {expert}
+
+HAG(normHosts) {training.epics}
+
+ASG(DEFAULT) {
+    RULE(1,READ)
+    RULE(1,WRITE) {
+        UAG(normUsers)
+        HAG(normHosts)
+    }
+}
+
+ASG(EXPERT) {
+
+    INPA($(S):accessState)
+
+    RULE(1,READ)
+
+    RULE(1,WRITE) {
+        UAG(expertUsers)
+        HAG(normHosts)
+    }
+
+    RULE(1,WRITE) {
+        UAG(normUsers)
+        HAG(normHosts)
+        CALC("A=1")
+    }
+
+}

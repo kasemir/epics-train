@@ -1,0 +1,22 @@
+record(calc, "$(S):ramp")
+{
+  field(CALC, "(A<B)?(A+C):0")
+  field(INPA, "$(S):ramp")
+  field(SCAN, "1 second")
+  field(INPB, "$(S):limit")
+  field(INPC, "$(S):step")
+}
+
+record(ai, "$(S):limit")
+{
+  field(INP, "10")
+  # AUTOSAVE
+  # info(autosaveFields, "VAL")
+}
+
+record(ai, "$(S):step")
+{
+  field(INP, "1")
+  # AUTOSAVE
+  # info(autosaveFields, "VAL")
+}

@@ -1,0 +1,167 @@
+
+record(calc, "$(S):ramp")
+{
+  field(CALC, "(A<B)?(A+C):0")
+  field(INPA, "$(S):ramp")
+  field(SCAN, "1 second")
+  field(INPB, "$(S):limit")
+  field(INPC, "$(S):step")
+}
+
+record(ai, "$(S):limit")
+{
+  field(INP, "10")
+  # AUTOSAVE
+  # info(autosaveFields, "VAL")
+}
+
+record(ai, "$(S):step")
+{
+  field(INP, "1")
+  # AUTOSAVE
+  # info(autosaveFields, "VAL")
+}
+
+# -----------------------------------------------
+
+# simulated inputs
+
+record(calc, "$(S):level")
+{
+  field(SCAN, "1 second")
+  field(CALC, "B?(C?(A<30?(A+1):30):(D?(A>0?(A-1):0):A):A)")
+  field(INPA, "$(S):level")
+  field(INPB, "$(S):systemEnable")
+  field(INPC, "$(S):inFlowPump")
+  field(INPD, "$(S):outFlowPump")
+  field(EGU, "mm")
+}
+
+record(calc, "$(S):highLevel")
+{
+  field(SCAN, "1 second")
+  field(CALC, "A>20?1:A<19.5?0:A")
+  field(INPA, "$(S):level")
+}
+
+record(calc, "$(S):lowLevel")
+{
+  field(SCAN, "1 second")
+  field(CALC, "A<1?1:A>1.5?0:A")
+  field(INPA, "$(S):level")
+}
+
+record(calc, "$(S):temp")
+{
+  field(SCAN, "1 second")
+  field(CALC, "B?(C?5:(D?(A>50?50:(51-A)*.01+A):A)):A")
+  field(INPA, "$(S):temp")
+  field(INPB, "$(S):systemEnable")
+  field(INPC, "$(S):inFlowPump")
+  field(INPD, "$(S):heater")
+  field(EGU, "C")
+}
+
+# outputs
+
+record(bo, "$(S):systemEnable")
+{
+  field(ZNAM, "false")
+  field(ONAM, "true")
+}
+
+record(bo, "$(S):systemReset")
+{
+  field(ZNAM, "")
+  field(ONAM, "reset")
+}
+
+record(bo, "$(S):pause")
+{
+  field(ZNAM, "resume")
+  field(ONAM, "pause")
+}
+
+record(bo, "$(S):inFlowPump")
+{
+  field(ZNAM, "off")
+  field(ONAM, "on")
+}
+
+record(bo, "$(S):outFlowPump")
+{
+  field(ZNAM, "off")
+  field(ONAM, "on")
+}
+
+record(bo, "$(S):heater")
+{
+  field(ZNAM, "off")
+  field(ONAM, "on")
+}
+
+record(bo, "$(S):impeller")
+{
+  field(ZNAM, "off")
+  field(ONAM, "on")
+}
+
+record(bo, "$(S):faultLamp")
+{
+  field(ZNAM, "off")
+  field(ONAM, "on")
+}
+
+record(stringout, "$(S):state")
+{
+  field(VAL, "unknown")
+}
+
+record(stringout, "$(S):faultMsg")
+{
+  field(VAL, "")
+}
+
+record(calc, "$(S):clockTick")
+{
+  field(SCAN, "1 second")
+  field(CALC, "B?0:A+1")
+  field(INPA, "$(S):clockTick")
+  field(INPB, "$(S):clockReset")
+}
+
+record(bo, "$(S):clockReset")
+{
+  field(ZNAM, "")
+  field(ONAM, "reset")
+}
+
+# params
+
+record(ao, "$(S):fillTimeout")
+{
+  field(SCAN, "1 second")
+  field(VAL, "60")
+  field(EGU, "seconds")
+}
+
+record(ao, "$(S):emptyTimeout")
+{
+  field(SCAN, "1 second")
+  field(VAL, "60")
+  field(EGU, "seconds")
+}
+
+record(ao, "$(S):heatTimeout")
+{
+  field(SCAN, "1 second")
+  field(VAL, "120")
+  field(EGU, "seconds")
+}
+
+record(ao, "$(S):initialTimeout")
+{
+  field(SCAN, "1 second")
+  field(VAL, "60")
+  field(EGU, "seconds")
+}
