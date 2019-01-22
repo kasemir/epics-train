@@ -29,7 +29,7 @@ record(ao, "DemoDeviceStart")
 
 record(busy, "DemoDeviceBusy")
 {
-    field(FLNK, "DemoDeviceReadback")
+    field(DESC, "BUSY Record")
 }
 
 # Readback slowly follows the setpoint
