@@ -5,6 +5,7 @@ include $(TOP)/configure/CONFIG
 
 DB += si_stream.db
 DB += busy_demo.db
+DB += busy_movie.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

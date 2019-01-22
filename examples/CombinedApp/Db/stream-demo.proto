@@ -1,0 +1,39 @@
+Terminator = CR LF;
+InTerminator = LF;
+ReplyTimeout = 10000;
+ReadTimeout = 10000;
+
+# Used with SCAN "... second" –
+# triggered from DB record.
+# Prompts, then expects "B 5"
+getB
+{
+    out "B?";
+    in "B %f";
+    @mismatch
+    {
+        # Commented out for demo
+        #disconnect;
+    }
+}
+
+# Used with SCAN, "I/O Intr".
+# Reacts to "A 5" at any time
+getA
+{
+   PollPeriod = 50;
+   in "A %f";
+}
+
+# Example with initialization,
+# otherwise only writes when processed
+setCurrent
+{
+    out "CURRENT %.2f";
+    @init
+    {
+        out "CURRENT?";
+        in "CURRENT %f A";
+    }
+}
+

@@ -1,0 +1,21 @@
+record(ao, "SetPoint")
+{
+  field(FLNK, "BusySet")
+}
+record(ai, "ReadBack")
+{
+  field(FLNK, "BusyClear")
+}
+record(longout, "BusySet")
+{
+  field(VAL, "1")
+  field(OUT, "Busy PP")
+}
+record(longout, "BusyClear")
+{
+  field(VAL, "0")
+  field(OUT, "Busy PP")
+}
+record(busy, "Busy")
+{
+}

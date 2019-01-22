@@ -1,0 +1,23 @@
+record(ai, "B")
+{
+  field (DTYP, "stream")
+  field (INP,  "@stream-demo.proto getB NC")
+  field (SCAN, "5 second")
+}
+record(ai, "A")
+{
+  field (DTYP, "stream")
+  field (INP,  "@stream-demo.proto getA NC")
+  field (SCAN, "I/O Intr")
+}
+record(ao, "current")
+{
+  field (DTYP, "stream")
+  field (OUT,  "@stream-demo.proto setCurrent NC")
+  field (EGU,  "A")
+  field (PREC, "2")
+  field (DRVL, "0")
+  field (DRVH, "60")
+  field (LOPR, "0")
+  field (HOPR, "60“)
+}
