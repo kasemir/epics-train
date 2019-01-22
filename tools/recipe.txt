@@ -15,6 +15,18 @@ echo >>~/.bashrc source ~/epics-train/settings.sh
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
+# HTOP
+wget https://github.com/hishamhm/htop/archive/2.2.0.zip
+unzip 2.2.0.zip 
+rm 2.2.0.zip 
+cd htop-2.2.0/
+./autogen.sh 
+./configure 
+make
+sudo mv htop /usr/local/bin
+cd ..
+rm -rf htop-2.2.0
+
 
 # EPICS Base
 sudo yum install -y readline-devel
