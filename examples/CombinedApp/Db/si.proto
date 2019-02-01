@@ -9,7 +9,7 @@ ReadTimeout = 10000;
 getVolt
 {
   out "VOLTS?";
-  in "%f";
+  in "VOLTS %f";
 }
 
 setVolt
@@ -24,5 +24,5 @@ setVolt
 getCurr
 {
   out "CURR?";
-  in "%f";
+  in "CURR %f";
 }
