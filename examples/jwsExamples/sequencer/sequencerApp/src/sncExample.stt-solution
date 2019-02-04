@@ -1,8 +1,12 @@
 program sncExample
 
 %% #define FILLING 1
-%% #define HEATING 2
-%% #define TRANSFERRING 3
+%% #define HEATINGPHASE1 2
+%% #define HOLDING 3
+%% #define HEATINGPHASE2 4
+%% #define TRANSFERRING 5
+
+%% #define HOLDTIME 30
 
 double systemEnable;
 assign systemEnable to "{S}:systemEnable";
@@ -72,6 +76,7 @@ assign faultMsg to "{S}:faultMsg";
 int curState;
 int checkOk;
 double count;
+double holdCount;
 
 ss ss1 {
 
@@ -224,7 +229,7 @@ ss ss1 {
       pvPut( heaterCtl, SYNC );
       impellerCtl = 1;
       pvPut( impellerCtl, SYNC );
-    } state heating
+    } state heatingPhase1
 
     when ( delay(1) ) {
       printf( "filling, level = %-f, count = %-g\n", level, count );
@@ -233,16 +238,16 @@ ss ss1 {
 
   }
 
-  state heating {
+  state heatingPhase1 {
 
     entry {
 
-      %% strcpy( seqg_var->stateName, "heating" );
+      %% strcpy( seqg_var->stateName, "heatingPhase1" );
       pvPut( stateName, SYNC );
 
       count = 0;
 
-      curState = HEATING;
+      curState = HEATINGPHASE1;
 
     }
 
@@ -254,11 +259,75 @@ ss ss1 {
       pvPut( heaterCtl, SYNC );
       impellerCtl = 0;
       pvPut( impellerCtl, SYNC );
-      %% strcpy( seqg_var->faultMsg, "heat timeout" );
+      %% strcpy( seqg_var->faultMsg, "heat 1 timeout" );
       pvPut( faultMsg, SYNC );
     } state faulted
 
     when ( temp >= 25 ) {
+      heaterCtl = 0;
+      pvPut( heaterCtl, SYNC );
+      holdCount = 0;
+    } state holding
+
+    when ( delay(1) ) {
+      printf( "heating phase 1, temp = %-f, count = %-g\n", temp, count );
+      count++;
+    } state heatingPhase1
+
+  }
+
+  state holding {
+
+    entry {
+
+      %% strcpy( seqg_var->stateName, "holding" );
+      pvPut( stateName, SYNC );
+
+      curState = HOLDING;
+
+    }
+
+    when ( pause == 1 ) {
+    } state pausing
+
+    when ( holdCount >= HOLDTIME ) {
+      heaterCtl = 1;
+      pvPut( heaterCtl, SYNC );
+    } state heatingPhase2
+
+    when ( delay(1) ) {
+      printf( "holding, temp = %-f, count = %-g\n", temp, holdCount );
+      holdCount++;
+    } state holding
+
+  }
+
+  state heatingPhase2 {
+
+    entry {
+
+      %% strcpy( seqg_var->stateName, "heatingPhase2" );
+      pvPut( stateName, SYNC );
+
+      count = 0;
+
+      curState = HEATINGPHASE2;
+
+    }
+
+    when ( pause == 1 ) {
+    } state pausing
+
+    when ( count > heatTimeout ) {
+      heaterCtl = 0;
+      pvPut( heaterCtl, SYNC );
+      impellerCtl = 0;
+      pvPut( impellerCtl, SYNC );
+      %% strcpy( seqg_var->faultMsg, "heat 2 timeout" );
+      pvPut( faultMsg, SYNC );
+    } state faulted
+
+    when ( temp >= 30 ) {
       heaterCtl = 0;
       pvPut( heaterCtl, SYNC );
       impellerCtl = 0;
@@ -268,9 +337,9 @@ ss ss1 {
     } state transferring
 
     when ( delay(1) ) {
-      printf( "heating, temp = %-f, count = %-g\n", temp, count );
+      printf( "heating phase 2, temp = %-f, count = %-g\n", temp, count );
       count++;
-    } state heating
+    } state heatingPhase2
 
   }
 
@@ -337,12 +406,24 @@ ss ss1 {
       pvPut( inFlowCtl, SYNC );
     } state filling
 
-    when ( ( pause != 1 ) && ( curState == HEATING ) ) {
+    when ( ( pause != 1 ) && ( curState == HEATINGPHASE1 ) ) {
       heaterCtl = 1;
       pvPut( heaterCtl, SYNC );
       impellerCtl = 1;
       pvPut( impellerCtl, SYNC );
-    } state heating
+    } state heatingPhase1
+
+    when ( ( pause != 1 ) && ( curState == HOLDING ) ) {
+      impellerCtl = 1;
+      pvPut( impellerCtl, SYNC );
+    } state holding
+
+    when ( ( pause != 1 ) && ( curState == HEATINGPHASE2 ) ) {
+      heaterCtl = 1;
+      pvPut( heaterCtl, SYNC );
+      impellerCtl = 1;
+      pvPut( impellerCtl, SYNC );
+    } state heatingPhase2
 
     when ( ( pause != 1 ) && ( curState == TRANSFERRING ) ) {
       outFlowCtl = 1;
