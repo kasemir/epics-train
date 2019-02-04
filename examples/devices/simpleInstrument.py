@@ -41,7 +41,7 @@ class DummyDevice(SocketServer.StreamRequestHandler):
             if (line == '*IDN?'):
                 reply = '*IDN US-PAS Instrument, Yoyodyne Incorporated -- An ACME Industries subsidiary, S/N:1313'
             elif (line == 'ON?'):
-                reply = 'ON ' + '1' if on else '0'
+                reply = 'ON ' + ('1' if on else '0')
             elif (line == 'VOLTS?'):
                 reply = 'VOLTS %.4f' % (voltage)
             elif (line == 'CURR?'):
