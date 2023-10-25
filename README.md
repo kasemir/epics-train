@@ -1,3 +1,7 @@
+This has been replaced by https://github.com/kasemir/epics-train-2021
+=====================================================================
+
+
 # epics-train
 Resources for EPICS Introduction.
 Started as V4 and CSS introduction at EPICS meeting,
